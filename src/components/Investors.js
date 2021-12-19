@@ -94,7 +94,7 @@ const [price, setprice] = useState("")
         <input onChange={(e) => { FuncName1(e); }} placeholder="name"/>{" "}
         <input onChange={(e) => { FunceMail(e); }} placeholder="email"/>{" "}
         <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber"/>{" "}
-        <input onChange={(e) => { FuncPrice(e); }} placeholder="price"/>{" "}
+        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount"/>{" "}
         <button onClick={() => {addInvestors();}}> add</button>{" "}
       
       </div>

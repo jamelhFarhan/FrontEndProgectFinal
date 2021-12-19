@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
+import "../style/SingUp.css"
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,13 +40,15 @@ export default function SignUp() {
   };
   return (
     <div>
-      <div>
-        <input
+      <div id="maindiv">
+        <input 
           onChange={(e) => {
             changeName(e);
           }}
-          placeholder="enter your name"
+          type="text" autoComplete="off" required  placeholder="enter your name"
         />
+         <label for="Name" className="lable-name"></label>
+         <span className="content-name">Name</span>
         <input
           onChange={(e) => {
             changeEmail(e);

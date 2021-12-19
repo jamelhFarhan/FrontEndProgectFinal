@@ -1,14 +1,21 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import "../style/Nav.css"
 export default function Navbar({ token, setToken }) {
   const history = useHistory();
   return (
     <div>
+    <nav>
+    
+   
+    <img id="img" src="https://yt3.ggpht.com/ytc/AKedOLRZiVaOhiyopxkS1brKSeKMrG9aOxkK020nA1BaSA=s176-c-k-c0x00ffffff-no-rj-mo"/>
+  <div className="nav-linkes">
       {token ? (
         <ul>
    <li>
         <Link className="link" to="/Regionss">
-        Regionss
+      
+        REGIONSS
         </Link>
    </li>
 
@@ -16,7 +23,8 @@ export default function Navbar({ token, setToken }) {
 
     <li>
   <Link className="link" to="/Region">
-            Region
+           
+            REGION
             </Link>
    </li>
 
@@ -26,15 +34,16 @@ export default function Navbar({ token, setToken }) {
           
           <li>
             <Link className="link" to="/Personal">
-            personal page
-
+         
+                PERSONAL PAGE
             </Link>
           </li>
 
 
           <li>
           <Link className="link" to="/investors">
-          investors
+         
+          INVESTORS
           </Link>
         </li>
 
@@ -47,7 +56,8 @@ export default function Navbar({ token, setToken }) {
                 localStorage.setItem("token", "")
               }}
             >
-              log out
+           
+              LOG OUT
             </Link>
           </li>
         </ul>
@@ -55,16 +65,23 @@ export default function Navbar({ token, setToken }) {
         <ul>
           <li>
             <Link className="link" to="/login">
-              login
+             
+              LOG IN
             </Link>
           </li>
           <li>
             <Link className="link" to="/signUp">
-              signUp
+             
+              SING UP
             </Link>
           </li>
         </ul>
+
       )}
+      </div>
+    
+     
+      </nav>
     </div>
   );
 }

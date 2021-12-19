@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 export default function Region({ token }) {
+  const history = useHistory();
   const [Regions, setRegions] = useState([]);
   const [name, setName] = useState("");
   const [description, setescription] = useState("");
@@ -13,11 +15,16 @@ export default function Region({ token }) {
   //--------------------get Regin----------
   useEffect(async () => {
     try {
-      console.log(token, "token here");
+      // console.log(token, "token here");
       const findRegin = await axios.get("http://localhost:5000/getRegions", {
         headers: { authorization: "Bearer " + token },
       });
+      //  console.log(findRegin);
+      // object all element
       setRegions(findRegin.data);
+
+      // console.log(findRegin.data);
+      // arry of object all data
     } catch (error) {
       console.log(error);
     }
@@ -35,7 +42,8 @@ export default function Region({ token }) {
   //////////////////////////post////
   const addRegion = async () => {
     try {
-      const result = await axios.post("http://localhost:5000/addRegion",
+      const result = await axios.post(
+        "http://localhost:5000/addRegion",
         {
           name: name,
           description: description,
@@ -48,6 +56,7 @@ export default function Region({ token }) {
       const copiArr = [...Regions];
       copiArr.push(result.data);
       setRegions(copiArr);
+      console.log(result.data);
     } catch (error) {
       console.log("errrorrr here");
     }
@@ -56,14 +65,17 @@ export default function Region({ token }) {
   /////////delete/////////
   const deleteRegions = async (id, i) => {
     try {
-      const severes = await axios.delete(`http://localhost:5000/deletRegion/${id}`,
+      const severes = await axios.delete(
+        `http://localhost:5000/deletRegion/${id}`,
         {
           headers: { authorization: "Bearer " + token },
         }
       );
+
       const copied = [...Regions];
       copied.splice(i, 1);
       setRegions(copied);
+      console.log(severes);
     } catch (error) {
       console.log("error");
     }
@@ -71,7 +83,8 @@ export default function Region({ token }) {
   ////////////update/////////
   const UpDateRegion = async (id, i) => {
     try {
-      const Modification = await axios.put(`http://localhost:5000/updateRegion/${id}`,
+      const Modification = await axios.put(
+        `http://localhost:5000/updateRegion/${id}`,
         {
           name: updateN,
           description: updateD,
@@ -82,10 +95,9 @@ export default function Region({ token }) {
         }
       );
       const ArrayCopied = [...Regions];
-      ArrayCopied[i]=Modification.data;
+      ArrayCopied[i] = Modification.data;
       setRegions(ArrayCopied);
       console.log(ArrayCopied);
-    
     } catch (error) {
       console.log("ereor her");
     }
@@ -110,20 +122,48 @@ export default function Region({ token }) {
         return element;
       }
     });
+    console.log(FuncSearsh);
     setRegions(FuncSearsh);
     return FuncSearsh;
   };
+  // const GoPage = (id) => {
+  //   history.push(`/Personal/${id}`);
+  //   console.log();
+  // };
+
+  const Favorite = async (id) => {
+    try {
+      const result = await axios.post(
+        `http://localhost:5000/like/${id}`,
+        {},
+        {
+          headers: { authorization: "Bearer " + token },
+        }
+      );
+      console.log(result.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   return (
     <>
-
-   
-    
-
-   
       <div>
         <div>
-          <input  placeholder="search" onChange={(e) => { FiandRegin(e);}} />
-           <button onClick={() => { FuncSearsh(); }} > searsh </button>
+          <input
+            placeholder="search"
+            onChange={(e) => {
+              FiandRegin(e);
+            }}
+          />
+          <button
+            onClick={() => {
+              FuncSearsh();
+            }}
+          >
+            {" "}
+            searsh{" "}
+          </button>
         </div>
 
         <br />
@@ -132,41 +172,101 @@ export default function Region({ token }) {
           return (
             <div key={element._id}>
               <p>name:{element.name}</p>
-              <img src={element.img} alt="no img" />
-              <p> description : {element.description}</p>
-              <button onClick={() => { deleteRegions(element._id, i);}} >  delete{" "}</button>
-              <button onClick={() => { UpDateRegion(element._id, i); }}> submet </button>
-            
 
+              <img src={element.img} alt="nooo img" />
+              <button
+                onClick={() => {
+                  Favorite(element._id);
+                }}
+              >
+                like
+              </button>
+              <p> description : {element.description}</p>
+
+              <button
+                onClick={() => {
+                  deleteRegions(element._id, i);
+                }}
+              >
+                {" "}
+                delete{" "}
+              </button>
+              <button
+                onClick={() => {
+                  UpDateRegion(element._id, i);
+                }}
+              >
+                {" "}
+                submet{" "}
+              </button>
 
               <div>
-              <button onClick={() => { setToggle(!toggle); }}>update </button>
-              {toggle === true ? (
-                <form>
-                  <input onChange={(e) => { UpDateName(e); }}placeholder="updateName"/>{" "}
-                  <br />
-                  <input onChange={(e) => { UpDateDesc(e); }} placeholder="updateDescription" />{" "}
-                  <br />
-                  <input onChange={(e) => { UpDateImg(e);}}placeholder="updateImg" />{" "}
-                  <br />
-                </form>
-              ) : (
-                ""
-              )}
-            </div>
-            <br />
-
+                <button
+                  onClick={() => {
+                    setToggle(!toggle);
+                  }}
+                >
+                  update{" "}
+                </button>
+                {toggle === true ? (
+                  <form>
+                    <input
+                      onChange={(e) => {
+                        UpDateName(e);
+                      }}
+                      placeholder="updateName"
+                    />{" "}
+                    <br />
+                    <input
+                      onChange={(e) => {
+                        UpDateDesc(e);
+                      }}
+                      placeholder="updateDescription"
+                    />{" "}
+                    <br />
+                    <input
+                      onChange={(e) => {
+                        UpDateImg(e);
+                      }}
+                      placeholder="updateImg"
+                    />{" "}
+                    <br />
+                  </form>
+                ) : (
+                  ""
+                )}
+              </div>
+              <br />
             </div>
           );
         })}
       </div>
-      <input onChange={(e) => { FuncName(e); }} placeholder="name"/>{" "}
-      <input  onChange={(e) => { FuncDesc(e); }} placeholder="description"/>{" "}
-      <input onChange={(e) => { FuncImg(e); }}placeholder="img"/>{" "}
-      <button onClick={() => {addRegion();}}> add</button>{" "}
-
-
-
+      <input
+        onChange={(e) => {
+          FuncName(e);
+        }}
+        placeholder="name"
+      />{" "}
+      <input
+        onChange={(e) => {
+          FuncDesc(e);
+        }}
+        placeholder="description"
+      />{" "}
+      <input
+        onChange={(e) => {
+          FuncImg(e);
+        }}
+        placeholder="img"
+      />{" "}
+      <button
+        onClick={() => {
+          addRegion();
+        }}
+      >
+        {" "}
+        add
+      </button>{" "}
     </>
   );
 }

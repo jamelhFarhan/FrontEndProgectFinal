@@ -21,8 +21,8 @@ export default function Login({ setToken }) {
         email:email, password:password
       });
       setToken(response.data.token);
-      localStorage.setItem("token", JSON.stringify(response.data.token))
-      history.push("/Product");
+      // localStorage.setItem("token", JSON.stringify(response.data.token))
+      history.push("/Regionss");
     } catch (error) {
       console.log(error);
     }

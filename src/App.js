@@ -7,36 +7,35 @@ import Region from "./components/Region";
 import Personal from "./components/Personal";
 import Investors from "./components/Investors";
 
-
 import { Route } from "react-router";
 export default function App() {
   const [token, setToken] = useState("");
-  
-  useEffect(() => {
-    if(!token && localStorage.getItem("token") !== ""){
-      setToken(localStorage.getItem("token"))
-    }
-  }, [])
 
+  // useEffect(() => {
+  //   if(!token && localStorage.getItem("token") !== ""){
+  //     setToken(localStorage.getItem("token"))
+  //   }
+  // }, [])
 
   return (
-     <div>
+    <div>
       <NavBar token={token} setToken={setToken} />
-     
-      <Route exact path="/Regionss"
-      render={() => {
-         return <Regionss token={token} />;
-       }}
-     />
 
-     
-        <Route
-         exact
-         path="/Region"
-         render={() => {
-           return <Region token={token} />;
+      <Route
+        exact
+        path="/Regionss"
+        render={() => {
+          return <Regionss token={token} />;
         }}
-       />
+      />
+
+      <Route
+        exact
+        path="/Region"
+        render={() => {
+          return <Region token={token} />;
+        }}
+      />
       <Route
         exact
         path="/login"
@@ -45,19 +44,21 @@ export default function App() {
         }}
       />
       <Route exact path="/signUp" component={SignUp} />
-      
-      <Route exact path="/Personal"
-       render={() => {
+
+      <Route
+        exact
+        path="/Personal"
+        render={() => {
           return <Personal token={token} />;
         }}
       />
-      <Route exact path="/Investors"
-       render={() => {
+      <Route
+        exact
+        path="/Investors"
+        render={() => {
           return <Investors token={token} />;
         }}
       />
-      
-     
     </div>
   );
 }
