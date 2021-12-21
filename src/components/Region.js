@@ -12,6 +12,9 @@ export default function Region({ token }) {
   const [updateD, setupdateD] = useState("");
   const [updateimg, setupdateimg] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [adminToggil, setAdminToggil] = useState(false);
+  ////////
+
   //--------------------get Regin----------
   useEffect(async () => {
     try {
@@ -28,8 +31,21 @@ export default function Region({ token }) {
     } catch (error) {
       console.log(error);
     }
-  }, []);
 
+    try {
+      const Admaien = await axios.get("http://localhost:5000/getUser", {
+        headers: { authorization: "Bearer " + token },
+      });
+
+      if (Admaien.data.Admin === true) {
+        setAdminToggil(true);
+        console.log(Admaien);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+  ///////////////////
   const FuncName = (e) => {
     setName(e.target.value);
   };
@@ -126,10 +142,6 @@ export default function Region({ token }) {
     setRegions(FuncSearsh);
     return FuncSearsh;
   };
-  // const GoPage = (id) => {
-  //   history.push(`/Personal/${id}`);
-  //   console.log();
-  // };
 
   const Favorite = async (id) => {
     try {
@@ -148,6 +160,7 @@ export default function Region({ token }) {
 
   return (
     <>
+      {adminToggil ? <h1>admin</h1> : <h1>user</h1>}
       <div>
         <div>
           <input
@@ -173,100 +186,119 @@ export default function Region({ token }) {
             <div key={element._id}>
               <p>name:{element.name}</p>
 
-              <img src={element.img} alt="nooo img" />
+              <img src={element.img} alt=" " />
               <button
                 onClick={() => {
                   Favorite(element._id);
                 }}
               >
+                {" "}
                 like
               </button>
               <p> description : {element.description}</p>
 
-              <button
-                onClick={() => {
-                  deleteRegions(element._id, i);
-                }}
-              >
-                {" "}
-                delete{" "}
-              </button>
-              <button
-                onClick={() => {
-                  UpDateRegion(element._id, i);
-                }}
-              >
-                {" "}
-                submet{" "}
-              </button>
-
               <div>
                 <button
                   onClick={() => {
-                    setToggle(!toggle);
+                    setToggle(true);
                   }}
                 >
-                  update{" "}
+                  show{""}
                 </button>
-                {toggle === true ? (
-                  <form>
-                    <input
-                      onChange={(e) => {
-                        UpDateName(e);
+                {adminToggil === true ? (
+                  <div>
+                    <button
+                      onClick={() => {
+                        deleteRegions(element._id, i);
                       }}
-                      placeholder="updateName"
-                    />{" "}
-                    <br />
-                    <input
-                      onChange={(e) => {
-                        UpDateDesc(e);
+                    >
+                      {" "}
+                      delete{" "}
+                    </button>
+                    <button
+                      onClick={() => {
+                        UpDateRegion(element._id, i);
                       }}
-                      placeholder="updateDescription"
-                    />{" "}
-                    <br />
-                    <input
-                      onChange={(e) => {
-                        UpDateImg(e);
-                      }}
-                      placeholder="updateImg"
-                    />{" "}
-                    <br />
-                  </form>
+                    >
+                      {" "}
+                      submet{" "}
+                    </button>
+
+                    <div>
+                      <button
+                        onClick={() => {
+                          setToggle(!toggle);
+                        }}
+                      >
+                        {" "}
+                        update{" "}
+                      </button>{" "}
+                      {toggle === true ? (
+                        <form>
+                          <input
+                            onChange={(e) => {
+                              UpDateName(e);
+                            }}
+                            placeholder="updateName"
+                          />{" "}
+                          <br />
+                          <input
+                            onChange={(e) => {
+                              UpDateDesc(e);
+                            }}
+                            placeholder="updateDescription"
+                          />{" "}
+                          <br />
+                          <input
+                            onChange={(e) => {
+                              UpDateImg(e);
+                            }}
+                            placeholder="updateImg"
+                          />{" "}
+                          <br />
+                        </form>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </div>
                 ) : (
                   ""
                 )}
               </div>
+
               <br />
             </div>
           );
         })}
       </div>
-      <input
-        onChange={(e) => {
-          FuncName(e);
-        }}
-        placeholder="name"
-      />{" "}
-      <input
-        onChange={(e) => {
-          FuncDesc(e);
-        }}
-        placeholder="description"
-      />{" "}
-      <input
-        onChange={(e) => {
-          FuncImg(e);
-        }}
-        placeholder="img"
-      />{" "}
-      <button
-        onClick={() => {
-          addRegion();
-        }}
-      >
-        {" "}
-        add
-      </button>{" "}
+      <div>
+        <input
+          onChange={(e) => {
+            FuncName(e);
+          }}
+          placeholder="name"
+        />{" "}
+        <input
+          onChange={(e) => {
+            FuncDesc(e);
+          }}
+          placeholder="description"
+        />{" "}
+        <input
+          onChange={(e) => {
+            FuncImg(e);
+          }}
+          placeholder="img"
+        />
+        <button
+          onClick={() => {
+            addRegion();
+          }}
+        >
+          add
+        </button>
+      </div>
     </>
   );
 }
