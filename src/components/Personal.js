@@ -18,15 +18,13 @@ export default function Personal({ token }) {
     }
   }, []);
 
-  const  removFavourites = async (id,i) => {
-    
+  const removFavourites = async (id, i) => {
     const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
-      
       headers: { authorization: "Bearer " + token },
     });
     console.log(result.data);
-    const copied = [...Like]
-    copied.splice(i,1)
+    const copied = [...Like];
+    copied.splice(i, 1);
     serLike(copied);
   };
 
@@ -37,9 +35,16 @@ export default function Personal({ token }) {
         return (
           <div>
             <p>{elem.name}</p>
-            <p>{elem.description}</p>
+
             <img src={elem.img} alt="no" />
-            <button onClick={() => {removFavourites(elem._id,i);}}>remove</button>
+            <button
+              onClick={() => {
+                removFavourites(elem._id, i);
+              }}
+            >
+              remove
+            </button>
+            <p>{elem.description}</p>
           </div>
         );
       })}

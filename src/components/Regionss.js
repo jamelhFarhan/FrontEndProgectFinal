@@ -1,27 +1,41 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "../style/Regions.css"
 export default function Regionss() {
+
+  
+  const history = useHistory();
+  const  theLine= (e) => {
+    history.push("/Region");
+  };
+
+  const  Oxagons= (e) => {
+    history.push("/Oxagon");
+  };
     return (
       
            
-     <div id='bigdiv ' >
-     <h1 className='title'>Regionss</h1>
-       <video autoPlay loop muted> 
-       <source src='https://youtu.be/TtSMz-_h_cw'></source>
-       </video>
-     <div className='images'>
-     <div className='imge-container'>
+    
+    <div className='images'>
+     <div className='imgee-container'>
      
-     <img className='imge-container' src='https://s3-eu-west-1.amazonaws.com/content.argaamnews.com/9479bdaa-82f9-4cc1-b7ae-955d1a534ee3.jpg'/>
-     
+     <img  src='https://i.pinimg.com/564x/0e/11/28/0e112874b7cffb158aeeb406f1ed76bf.jpg'/>
+     <div className="reg-div-con">
+     <button id="buttonOne"
+        onClick={() => { theLine()}} > THE LINE
+         </button></div>
      </div>
     
      <div className='imgee-container'>
-     <img className='imgee-container' src='https://www.shorouknews.com/uploadedimages/Other/original/fdfgdsfgdfg848.jpg'/>
-     </div>
+     <img  src='https://www.shorouknews.com/uploadedimages/Other/original/fdfgdsfgdfg848.jpg'/>
+     <div className="reg-div-con">
+     <button id="buttonOne"
+     onClick={() => { Oxagons()}} > OXAGON
+      </button></div>
      </div>
     
      </div>
+   
    
     )
 }

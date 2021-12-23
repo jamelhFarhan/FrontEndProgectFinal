@@ -20,17 +20,6 @@ export default function Navbar({ token, setToken }) {
    </li>
 
 
-
-    <li>
-  <Link className="link" to="/Region">
-           
-            REGION
-            </Link>
-   </li>
-
-         
-
-
           
           <li>
             <Link className="link" to="/Personal">
@@ -46,7 +35,13 @@ export default function Navbar({ token, setToken }) {
           INVESTORS
           </Link>
         </li>
-
+        
+        <li>
+        <Link className="link" to="/SECTORS">
+       
+        SECTORS
+        </Link>
+      </li>
           <li>
             <Link
               className="link"

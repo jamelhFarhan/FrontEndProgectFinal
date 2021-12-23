@@ -13,6 +13,7 @@ export default function Region({ token }) {
   const [updateimg, setupdateimg] = useState("");
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
+  // import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
   ////////
 
   //--------------------get Regin----------
@@ -187,24 +188,24 @@ export default function Region({ token }) {
               <p>name:{element.name}</p>
 
               <img src={element.img} alt=" " />
-              <button
+              <button FavoriteBorderSharpIcon
                 onClick={() => {
                   Favorite(element._id);
                 }}
               >
                 {" "}
-                like
+                Favorite
               </button>
               <p> description : {element.description}</p>
 
               <div>
-                <button
+               {adminToggil? <button
                   onClick={() => {
                     setToggle(true);
                   }}
                 >
                   show{""}
-                </button>
+                </button>:""}
                 {adminToggil === true ? (
                   <div>
                     <button
@@ -214,7 +215,8 @@ export default function Region({ token }) {
                     >
                       {" "}
                       delete{" "}
-                    </button>
+                    </button> 
+
                     <button
                       onClick={() => {
                         UpDateRegion(element._id, i);
@@ -272,7 +274,7 @@ export default function Region({ token }) {
           );
         })}
       </div>
-      <div>
+    {adminToggil? <div>
         <input
           onChange={(e) => {
             FuncName(e);
@@ -298,7 +300,9 @@ export default function Region({ token }) {
         >
           add
         </button>
-      </div>
+      </div>:""}
+
+      
     </>
   );
 }

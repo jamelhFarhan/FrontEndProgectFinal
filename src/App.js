@@ -6,8 +6,10 @@ import Regionss from "./components/Regionss";
 import Region from "./components/Region";
 import Personal from "./components/Personal";
 import Investors from "./components/Investors";
-
+import Oxagon from "./components/Oxagon";
+import SECTORS from "./components/SECTORS";
 import { Route } from "react-router";
+
 export default function App() {
   const [token, setToken] = useState("");
 
@@ -31,11 +33,26 @@ export default function App() {
 
       <Route
         exact
+        path="/SECTORS"
+        render={() => {
+          return <SECTORS token={token} />;
+        }}
+      />
+      <Route
+        exact
         path="/Region"
         render={() => {
           return <Region token={token} />;
         }}
       />
+      <Route
+      exact
+      path="/Oxagon"
+      render={() => {
+        return <Oxagon token={token} />;
+      }}
+    />
+    
       <Route
         exact
         path="/login"
