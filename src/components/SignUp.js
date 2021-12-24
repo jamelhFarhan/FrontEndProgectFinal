@@ -19,6 +19,7 @@ export default function SignUp() {
   };
 
   const addUser = async () => {
+    // if( name !==""&&email !==""&& password!=="" )
     console.log({
       name: name,
       email: email,
@@ -41,34 +42,16 @@ export default function SignUp() {
   return (
     <div>
       <div id="maindiv">
-        <input 
-          onChange={(e) => {
-            changeName(e);
-          }}
-          type="text" autoComplete="off" required  placeholder="enter your name"
-        />
-         <label for="Name" className="lable-name"></label>
-         <span className="content-name">Name</span>
-        <input
-          onChange={(e) => {
-            changeEmail(e);
-          }}
-          placeholder="enter your email"
-        />
-        <input
-          onChange={(e) => {
-            changePassword(e);
-          }}
-          type="password"
-          placeholder="enter your password"
-        />
-        <button
-          onClick={() => {
-            addUser();
-          }}
-        >
-          sign up
-        </button>
+      <label>Name</label>
+        <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"/>
+       <br/>
+         <label>Email</label>
+        <input onChange={(e) => {changeEmail(e);}} placeholder="enter your email"/>
+        <br/>
+        <label>Password</label>
+        <input onChange={(e) => { changePassword(e); }} type="password" placeholder="enter your password" />
+        <br/>
+        <button onClick={() => {addUser(); }}> sign up</button>
       </div>
     </div>
   );

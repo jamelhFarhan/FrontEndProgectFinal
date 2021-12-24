@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Personal({ token }) {
-  const [Like, serLike] = useState([]);
+  const [Like, setLike] = useState([]);
 
   useEffect(async () => {
     try {
@@ -10,7 +10,7 @@ export default function Personal({ token }) {
         const result = await axios.get("http://localhost:5000/like", {
           headers: { authorization: "Bearer " + token },
         });
-        serLike(result.data);
+        setLike(result.data);
         console.log(result.data, "likes");
       }
     } catch (error) {
@@ -25,7 +25,7 @@ export default function Personal({ token }) {
     console.log(result.data);
     const copied = [...Like];
     copied.splice(i, 1);
-    serLike(copied);
+    setLike(copied);
   };
 
   return (

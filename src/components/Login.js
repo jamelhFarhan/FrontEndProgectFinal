@@ -30,14 +30,15 @@ export default function Login({ setToken }) {
   return ( 
     <div>
     <div>
+    <label>Email</label>
       <input 
         onChange={(e) => {
           interEmail(e);
         }}
         placeholder="enter your email"
       />
-      
-      
+      <br/>
+      <label>Password</label>
       <input
         onChange={(e) => {
           enterPassword(e);
@@ -45,7 +46,7 @@ export default function Login({ setToken }) {
         type="password"
         placeholder="enter your password"
       />
-      
+      <br/>
       
       <button 
         onClick={() => {

@@ -161,23 +161,21 @@ export default function Region({ token }) {
 
   return (
     <>
-      {adminToggil ? <h1>admin</h1> : <h1>user</h1>}
+
+
+
+
+
+
+
+
+
+       {adminToggil ? "" : ""}
       <div>
+      
         <div>
-          <input
-            placeholder="search"
-            onChange={(e) => {
-              FiandRegin(e);
-            }}
-          />
-          <button
-            onClick={() => {
-              FuncSearsh();
-            }}
-          >
-            {" "}
-            searsh{" "}
-          </button>
+          <input placeholder="search" onChange={(e) => { FiandRegin(e); }}/>
+          <button onClick={() => { FuncSearsh(); }} > {" "} search.{" "}</button>
         </div>
 
         <br />
@@ -188,24 +186,13 @@ export default function Region({ token }) {
               <p>name:{element.name}</p>
 
               <img src={element.img} alt=" " />
-              <button FavoriteBorderSharpIcon
-                onClick={() => {
-                  Favorite(element._id);
-                }}
-              >
-                {" "}
-                Favorite
-              </button>
+              <button 
+                onClick={() => {  Favorite(element._id); }} >Favorite </button>
               <p> description : {element.description}</p>
 
               <div>
-               {adminToggil? <button
-                  onClick={() => {
-                    setToggle(true);
-                  }}
-                >
-                  show{""}
-                </button>:""}
+               {adminToggil? 
+                <button onClick={() => { setToggle(true); }} > show{""} </button>:""}
                 {adminToggil === true ? (
                   <div>
                     <button
@@ -217,14 +204,7 @@ export default function Region({ token }) {
                       delete{" "}
                     </button> 
 
-                    <button
-                      onClick={() => {
-                        UpDateRegion(element._id, i);
-                      }}
-                    >
-                      {" "}
-                      submet{" "}
-                    </button>
+                    <button  onClick={() => { UpDateRegion(element._id, i); }}> {" "}submet{" "} </button>
 
                     <div>
                       <button
@@ -237,12 +217,7 @@ export default function Region({ token }) {
                       </button>{" "}
                       {toggle === true ? (
                         <form>
-                          <input
-                            onChange={(e) => {
-                              UpDateName(e);
-                            }}
-                            placeholder="updateName"
-                          />{" "}
+                          <input onChange={(e) => { UpDateName(e); }} placeholder="updateName"/>{" "}
                           <br />
                           <input
                             onChange={(e) => {
@@ -275,31 +250,14 @@ export default function Region({ token }) {
         })}
       </div>
     {adminToggil? <div>
-        <input
-          onChange={(e) => {
-            FuncName(e);
-          }}
-          placeholder="name"
-        />{" "}
-        <input
-          onChange={(e) => {
-            FuncDesc(e);
-          }}
-          placeholder="description"
-        />{" "}
-        <input
-          onChange={(e) => {
-            FuncImg(e);
-          }}
-          placeholder="img"
-        />
-        <button
-          onClick={() => {
-            addRegion();
-          }}
-        >
-          add
-        </button>
+      <label for="Name">Name</label>
+        <input onChange={(e) => { FuncName(e);}} placeholder="name"/>{" "}
+        <br/>
+        <label for="description">Description</label>
+        <input onChange={(e) => { FuncDesc(e); }}  placeholder="description"/>{" "}<br/>
+        <label for="img">Img</label>
+        <input onChange={(e) => { FuncImg(e); }}  placeholder="img"/><br/>
+        <button onClick={() => { addRegion(); }} > add</button>
       </div>:""}
 
       
