@@ -30,11 +30,17 @@ export default function Navbar({ token, setToken }) {
 
 
           <li>
-          <Link className="link" to="/investors">
+          <Link className="link" to="/BeAnAnvestor">
          
-          INVESTORS
+          BeAnAnvestor
           </Link>
         </li>
+        <li>
+        <Link className="link" to="/investors">
+       
+        INVESTORS
+        </Link>
+      </li>
         
         <li>
         <Link className="link" to="/SECTORS">

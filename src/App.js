@@ -8,8 +8,8 @@ import Personal from "./components/Personal";
 import Investors from "./components/Investors";
 import Oxagon from "./components/Oxagon";
 import SECTORS from "./components/SECTORS";
+ import BeAnAnvestor from "./components/BeAnAnvestor";
 import { Route } from "react-router";
-
 export default function App() {
   const [token, setToken] = useState("");
 
@@ -52,7 +52,15 @@ export default function App() {
         return <Oxagon token={token} />;
       }}
     />
+    <Route
+      exact
+      path="/BeAnAnvestor"
+      render={() => {
+        return <BeAnAnvestor token={token} />;
+      }}
+    />
     
+  
       <Route
         exact
         path="/login"
