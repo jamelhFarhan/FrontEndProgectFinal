@@ -1,176 +1,57 @@
+// import React from 'react';
+// import{
+//   ResponsiveContainer,
+//   AreaChart,
+//   XAxis,
+//   YAxis,
+//   Area,
+//   Tooltip,
+//   CartesianGrid,
+// } from "recharts";
+// import { format, parseISO , subDays } from "date-fns";
 
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+// export default function Investors(){
+//   const data =[];
+// for (let parc =30;parc >= 0; parc--){
+//   data.push ({
+//     data:subDays( new Date (),parc).toISotring().substr(0,10),
 
+//     value: 1+ Math.random()
+//   });
+// }
+//   return<ResponsiveContainer width={100} height={400} >
+// <AreaChart data={data}>
+// <difs>
+// <linearGradient id='color' x1="0" y1="0" x2="0" y1="1">
+// <stop  offset="0%" stopColor='#2451B7' stopOpacity={0,4}></stop>
+// <stop  offset="75%" stopColor='#2451B7' stopOpacity={0,05}></stop>
+// </linearGradient>
+// </difs>
+// <Area dataKey="value" stork="#2451B7" fill="url(#color)"/>
 
-export default function Investors({token}) {
+// <XAxis dataKey="date"  axisLine={false} tickLine={false} tickFormatter={ str=>{
+//   const date = parseISO(str);
+//   if(date.getDate()%7 ===0){
+//     return format (date,"mm, d");
+//   }
+//   return"";
+// }} />
 
-const [Investors, setInvestors] = useState([])
-const [name, setname1] = useState("");
-const [email, setemail] = useState("");
-const [phoneNumber, setphoneNumber] = useState("");
-const [price, setprice] = useState("")
-const [nameUpdate ,setnameUpdate]=useState("");
-const[emailUpdate, setemailUpdate]=useState("");
-const[priceUpdate, setpriceUpdate]=useState("");
-const[phoneNumberUpdate, setphoneNumberUpdate]=useState("");
+// <YAxis dataKay="value" axisLine={false} tickLine={false} tickCount={8}
+// tickFormatter={number =>`$${number.toFixed(2)}`}/>
 
+// <Tooltip  content={<CustomTooltip/>}/>
+// <CartesianGrid  opacity={0,1} vertical={false}/>
+// </AreaChart>
+//   </ResponsiveContainer>
+  
 
-
-
-
-
-
-
-
-
-
-
-
-// <button onClick={()=> {UpdateInvestor (elem._id, i);}}>Updated{""}</button>
-// <input onChange={(e) => { Upname(e); }} placeholder="name"/>{" "}
-// <input onChange={(e) => { Upemail(e); }} placeholder="email"/>{" "}
-// <input onChange={(e) => { UpphoneNumber(e); }} placeholder="phoneNumber"/>{" "}
-// <input onChange={(e) => { Upprice(e); }} placeholder="amount"/>{" "}
-///////////////
-    useEffect(async () => {
-        try {
-          console.log(token);
-          const findInvestors = await axios.get("http://localhost:5000/getInvestor", {
-              
-            headers: { authorization: "Bearer " + token },
-          });
-          setInvestors(findInvestors.data);
-           console.log(findInvestors.data);
-        } catch (error) {
-          console.log(error);
-        }
-      }, []);
-
-      const addInvestors = async () => {
-        try {
-          const result1 = await axios.post("http://localhost:5000/addInvestors",
-            {
-                name: name,
-                email : email,
-                phoneNumber:phoneNumber,
-                price:price,
-             
-            },
-            {
-              headers: { authorization: "Bearer " + token },
-            }
-          );
-          const copiArray = [...Investors];
-          copiArray.push(result1.data);
-          setInvestors(copiArray);
-        } catch (error) {
-          console.log("errrorrr here");
-        }
-      };
-
-      /////////////////delete
-      const deleteInvestors = async (id, i) => {
-        try {
-          const severes = await axios.delete(`http://localhost:5000/deletInvestors/${id}`,
-            {
-              headers: { authorization: "Bearer " + token },
-            }
-          );
-          const copied = [...Investors];
-          copied.splice(i, 1);
-          setInvestors(copied);
-          console.log(severes);
-        } catch (error) {
-          console.log("error");
-        }
-      };
-
-      /////////////////////////////update////////////////////////////////
-       const UpdateInvestor = async(id,i) =>{
-  try {
-    const datainvestor = await axios.put(`http://localhost:5000/updateInvestors/${id}`,
-    {
-      name: nameUpdate,
-      email : emailUpdate,
-      phoneNumber:phoneNumberUpdate,
-      price:priceUpdate,
-    },
-    {
-      headers: { authorization: "Bearer " + token },
-    }
-    
-    ) ;
-
-  //   ///////////
-    const ArrCopeeid=[...Investors];
-    ArrCopeeid[i]=datainvestor.data;
-    setInvestors(ArrCopeeid);
-  } catch (error) {
-    console.log(error);
-  }
-      }
-
-
-      const FuncName1=(e)=>{
-        setname1(e.target.value); 
-      } ;
-      const FunceMail=(e)=>{
-        setemail(e.target.value); 
-      } ;
-      const FuncPhone=(e)=>{
-        setphoneNumber(e.target.value); 
-      } ;
-      const FuncPrice=(e)=>{
-        setprice(e.target.value); 
-      } ;
-///////////////////////////////////
-      const Upname=(e)=>{
-        setnameUpdate (e.target.value); 
-      };
-      const Upemail=(e)=>{
-        setemailUpdate (e.target.value); 
-      };
-      const Upprice=(e)=>{
-        setpriceUpdate (e.target.value); 
-      };
-      const UpphoneNumber=(e)=>{
-        setphoneNumberUpdate (e.target.value); 
-      };
-        
-    return (
-        <div>
-        {Investors.map((elem, i) => {
-          return (
-            <div  key={elem._id}>
-              <p> {elem.name}</p>
-              <p> {elem.email}</p>
-              <p>{elem.phoneNumber}</p>
-              <p>{elem.price}</p>
-              <br/> 
-
-              
-              <button onClick={()=> {UpdateInvestor (elem._id, i);}}>Updated{""}</button>
-               <input onChange={(e) => { Upname(e); }} placeholder="name"/>{" "}
-               <input onChange={(e) => { Upemail(e); }} placeholder="email"/>{" "}
-               <input onChange={(e) => { UpphoneNumber(e); }} placeholder="phoneNumber"/>{" "}
-               <input onChange={(e) => { Upprice(e); }} placeholder="amount"/>{" "}
-             
-               <br/>
-               <button onClick={() => { deleteInvestors(elem._id, i);}} >  delete{" "}</button><br/>
-             
-            </div>
-          );
-        })}
-        <br/>
-        <input onChange={(e) => { FuncName1(e); }} placeholder="name"/>{" "}
-        <input onChange={(e) => { FunceMail(e); }} placeholder="email"/>{" "}
-        <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber"/>{" "}
-        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount"/>{" "}
-        <button onClick={() => {addInvestors();}}> add</button>{" "}
-      
-
-
-      </div>
-    )
-}
+// }
+// function CustomTooltip({acttive, payload,label}){
+// if(acttive){
+//   <div><h4>{format(parseISO(label),"eeee,mmm,yyyy")}</h4>
+//   <p>{payload[0].value.toFixed(2)}</p>
+//   </div>
+// }
+// return null;
+// }

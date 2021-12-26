@@ -6,71 +6,35 @@
 position: relative;
 }
  img{
+   /* display: flex;
+   justify-content: space-between; */
    
     transform: scale(1.07);
    
  
 } 
 #one{
-    margin: 80px;
+    margin: 100px; 
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
+    box-shadow: 7px 7px 7px  7px rgba(35, 40, 48, 0.384);
 }
 
 #tow{
-    margin:  80px;
+    margin:  100px;
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
+    box-shadow: 7px 7px 7px  7px rgba(35, 40, 48, 0.384);
 }
 #thre{
-    margin: 80px;
+    margin: 100px;
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
+    box-shadow: 7px 7px 7px  7px rgba(35, 40, 48, 0.384);
 }
 #for{
-    margin: 80px;
+    margin: 100px;
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
+    box-shadow: 7px 7px 7px  7px rgba(35, 40, 48, 0.384);
 }
-#fiv{
-  margin: 80px;  
-  box-sizing: border-box;
-  box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#six{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#sivn{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#eet{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#nin{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}#tin{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#twlf{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
-#elf{
-    margin: 80px;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 5px rgba(35, 40, 48, 0.384);
-}
+
 
 
 

@@ -56,7 +56,7 @@ export default function App() {
       exact
       path="/BeAnAnvestor"
       render={() => {
-        return <BeAnAnvestor token={token} />;
+        return <BeAnAnvestor token={token}/>;
       }}
     />
     

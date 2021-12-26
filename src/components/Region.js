@@ -26,7 +26,9 @@ export default function Region({ token }) {
       //  console.log(findRegin);
       // object all element
       setRegions(findRegin.data);
-
+      setupdateN(findRegin.data.updateN);
+      setupdateimg(findRegin.data.updateimg);
+      setupdateD(findRegin.data.updateD);
       // console.log(findRegin.data);
       // arry of object all data
     } catch (error) {
@@ -217,21 +219,11 @@ export default function Region({ token }) {
                       </button>{" "}
                       {toggle === true ? (
                         <form>
-                          <input onChange={(e) => { UpDateName(e); }} placeholder="updateName"/>{" "}
+                          <input  onChange={(e) => { UpDateName(e); }} placeholder="updateName" value={updateN}/>
                           <br />
-                          <input
-                            onChange={(e) => {
-                              UpDateDesc(e);
-                            }}
-                            placeholder="updateDescription"
-                          />{" "}
+                          <input onChange={(e) => {UpDateDesc(e);}} placeholder="updateDescription"value={updateD} />
                           <br />
-                          <input
-                            onChange={(e) => {
-                              UpDateImg(e);
-                            }}
-                            placeholder="updateImg"
-                          />{" "}
+                          <input onChange={(e) => { UpDateImg(e); }} placeholder="updateImg"  value={updateimg}/>
                           <br />
                         </form>
                       ) : (
