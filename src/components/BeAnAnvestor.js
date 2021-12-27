@@ -48,8 +48,14 @@ useEffect(async () => {
       const copiArray = [...Investors];
       copiArray.push(result1.data);
       setInvestors(copiArray);
+      setname1("")
+      setemail("")
+      setphoneNumber("")
+      setprice("")
      
       console.log(result1.data);
+
+     
     } catch (error) {
       console.log("errrorrr here");
     }
@@ -90,6 +96,10 @@ const deleteInvestors = async (id, i) => {
     ArrCopeeid[i]=datainvestor.data;
     setInvestors(ArrCopeeid);
     console.log(datainvestor.data);
+    setnameUpdate("")
+    setemailUpdate("")
+    setpriceUpdate("")
+    setphoneNumberUpdate("")
   } catch (error) {
      console.log(error);
    }
@@ -150,10 +160,10 @@ const FuncName1=(e)=>{
           );
         })}
         <br/>
-        <input onChange={(e) => { FuncName1(e); }} placeholder="name"/>{" "}<br/>
-        <input onChange={(e) => { FunceMail(e); }} placeholder="email"/>{" "}<br/>
-        <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" type={"number"}/>{" "}<br/>
-        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount"/>{" "}<br/>
+        <input onChange={(e) => { FuncName1(e); }} placeholder="name" value={name}/>{" "}<br/>
+        <input onChange={(e) => { FunceMail(e); }} placeholder="email" value={email}/>{" "}<br/>
+        <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" value={phoneNumber} type={"number"}/>{" "}<br/>
+        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/>
         <button onClick={() => {addInvestors();}}> add</button>
       
 

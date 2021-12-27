@@ -9,6 +9,12 @@ import Investors from "./components/Investors";
 import Oxagon from "./components/Oxagon";
 import SECTORS from "./components/SECTORS";
  import BeAnAnvestor from "./components/BeAnAnvestor";
+ import Energe from "./Sectors/Energe";
+ import Media from "./Sectors/Media";
+ import Manufacturing  from "./Sectors/Manufacturing";
+ import DigitalTechnology from "./Sectors/DigitalTechnology";
+
+
 import { Route } from "react-router";
 export default function App() {
   const [token, setToken] = useState("");
@@ -59,6 +65,34 @@ export default function App() {
         return <BeAnAnvestor token={token}/>;
       }}
     />
+    <Route
+      exact
+      path="/Energe"
+      render={() => {
+        return <Energe token={token}/>;
+      }}
+    />
+    <Route
+    exact
+    path="/Media"
+    render={() => {
+      return <Media token={token}/>;
+    }}
+  />
+  <Route
+    exact
+    path="/Manufacturing"
+    render={() => {
+      return <Manufacturing token={token}/>;
+    }}
+  />
+  <Route
+    exact
+    path="/DigitalTechnology"
+    render={() => {
+      return <DigitalTechnology token={token}/>;
+    }}
+  />
     
   
       <Route

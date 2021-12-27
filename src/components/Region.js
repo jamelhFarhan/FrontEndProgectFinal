@@ -76,6 +76,10 @@ export default function Region({ token }) {
       copiArr.push(result.data);
       setRegions(copiArr);
       console.log(result.data);
+      setName("")
+      setescription("")
+      setImg("")
+
     } catch (error) {
       console.log("errrorrr here");
     }
@@ -117,6 +121,9 @@ export default function Region({ token }) {
       ArrayCopied[i] = Modification.data;
       setRegions(ArrayCopied);
       console.log(ArrayCopied);
+      setupdateN("")
+      setupdateD("")
+      setupdateimg("")
     } catch (error) {
       console.log("ereor her");
     }
@@ -206,7 +213,7 @@ export default function Region({ token }) {
                       delete{" "}
                     </button> 
 
-                    <button  onClick={() => { UpDateRegion(element._id, i); }}> {" "}submet{" "} </button>
+                     <button  onClick={() => { UpDateRegion(element._id, i); }} > {" "}submet{" "}  </button>
 
                     <div>
                       <button
@@ -221,7 +228,7 @@ export default function Region({ token }) {
                         <form>
                           <input  onChange={(e) => { UpDateName(e); }} placeholder="updateName" value={updateN}/>
                           <br />
-                          <input onChange={(e) => {UpDateDesc(e);}} placeholder="updateDescription"value={updateD} />
+                          <input onChange={(e) => {UpDateDesc(e);}} placeholder="updateDescription" value={updateD} />
                           <br />
                           <input onChange={(e) => { UpDateImg(e); }} placeholder="updateImg"  value={updateimg}/>
                           <br />
@@ -243,12 +250,12 @@ export default function Region({ token }) {
       </div>
     {adminToggil? <div>
       <label for="Name">Name</label>
-        <input onChange={(e) => { FuncName(e);}} placeholder="name"/>{" "}
+        <input onChange={(e) => { FuncName(e);}} placeholder="name" value={name}/>{" "}
         <br/>
         <label for="description">Description</label>
-        <input onChange={(e) => { FuncDesc(e); }}  placeholder="description"/>{" "}<br/>
+        <input onChange={(e) => { FuncDesc(e); }}  placeholder="description" value={description}/>{" "}<br/>
         <label for="img">Img</label>
-        <input onChange={(e) => { FuncImg(e); }}  placeholder="img"/><br/>
+        <input onChange={(e) => { FuncImg(e); }}  placeholder="img" value={img}/><br/>
         <button onClick={() => { addRegion(); }} > add</button>
       </div>:""}
 
