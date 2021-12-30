@@ -14,7 +14,7 @@ export default function Media() {
      <h1>
      CHANGING   THE   FUTURE   OF   MEDIA
      </h1>
-     <p>
+     <p id='id'>
      Creating a new centre for the region’s media and creative industries – by establishing the world’s <br/>
       first physically and technologically integrated hub focused on screen production, <br/> gaming and digital publishing. <br/> It is the future of media.
      </p>

@@ -14,11 +14,18 @@ nav{
     font-family: sans-serif;
     background-color:rgba(51, 37, 37, 0.267);
     position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    
 } 
 #img{
-  width: 150px;
-  height: 80px;
-  border-radius: 30px;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   
 }
 

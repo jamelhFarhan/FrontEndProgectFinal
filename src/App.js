@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style/app.css"
 import NavBar from "./components/Navbar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -13,6 +14,8 @@ import SECTORS from "./components/SECTORS";
  import Media from "./Sectors/Media";
  import Manufacturing  from "./Sectors/Manufacturing";
  import DigitalTechnology from "./Sectors/DigitalTechnology";
+import User from "./components/Users/User";
+  
 
 
 import { Route } from "react-router";
@@ -112,12 +115,22 @@ export default function App() {
         }}
       />
       <Route
+      exact
+      path="/User"
+      render={() => {
+        return <User token={token} />;
+      }}
+    />
+      <Route
         exact
         path="/Investors"
         render={() => {
           return <Investors token={token} />;
         }}
       />
+      
+    
+  
     </div>
   );
 }

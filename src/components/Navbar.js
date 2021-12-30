@@ -8,7 +8,7 @@ export default function Navbar({ token, setToken }) {
     <nav>
     
    
-    <img id="img" src="https://yt3.ggpht.com/ytc/AKedOLRZiVaOhiyopxkS1brKSeKMrG9aOxkK020nA1BaSA=s176-c-k-c0x00ffffff-no-rj-mo"/>
+    <img id="img" src="https://www.neom.com/content/dam/neom/logos/logo-neom.png"/>
   <div className="nav-linkes">
       {token ? (
         <ul>
@@ -35,12 +35,8 @@ export default function Navbar({ token, setToken }) {
           BeAnAnvestor
           </Link>
         </li>
-        <li>
-        <Link className="link" to="/investors">
-       
-        INVESTORS
-        </Link>
-      </li>
+      
+      
         
         <li>
         <Link className="link" to="/SECTORS">

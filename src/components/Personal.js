@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+// import Button from '@mui/material/Button'
 export default function Personal({ token }) {
   const [Like, setLike] = useState([]);
 
@@ -41,7 +42,8 @@ export default function Personal({ token }) {
               onClick={() => {
                 removFavourites(elem._id, i);
               }}
-            >
+             >
+             
               remove
             </button>
             <p>{elem.description}</p>

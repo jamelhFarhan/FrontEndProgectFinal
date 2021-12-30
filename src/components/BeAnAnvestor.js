@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 export default function BeAnAnvestor({token}) {
     const [Investors, setInvestors] = useState([])
@@ -11,6 +12,7 @@ const [price, setprice] = useState("");
  const[emailUpdate, setemailUpdate]=useState("");
  const[priceUpdate, setpriceUpdate]=useState("");
  const[phoneNumberUpdate, setphoneNumberUpdate]=useState("");
+ const [userAdmin, setUserAdmin] = useState(false);
 
 
 useEffect(async () => {
@@ -29,6 +31,21 @@ useEffect(async () => {
     } catch (error) {
       console.log(error);
     }
+try {
+  const AdminI =await axios.get("http://localhost:5000/getDamin",{
+    headers: { authorization: "Bearer " + token },
+  })
+  if (AdminI.data.Admin === true) {
+    setUserAdmin(true);
+    console.log(AdminI);
+  }
+
+} catch (error) {
+  
+}
+
+
+
   }, []);
   ///////////////////
   const addInvestors = async () => {
@@ -134,8 +151,18 @@ const FuncName1=(e)=>{
       const UpphoneNumber=(e)=>{
         setphoneNumberUpdate (e.target.value); 
       };
+     
+
+        const history = useHistory();
+    const  Dashboar= () => {
+      history.push("/investors");
+    }
+      
     return (
+      
         <div>
+        
+       {userAdmin ? "" : ""}
         <h1>hey</h1>
         <div>
         {Investors.map((elem, i) => {
@@ -163,13 +190,18 @@ const FuncName1=(e)=>{
         <input onChange={(e) => { FuncName1(e); }} placeholder="name" value={name}/>{" "}<br/>
         <input onChange={(e) => { FunceMail(e); }} placeholder="email" value={email}/>{" "}<br/>
         <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" value={phoneNumber} type={"number"}/>{" "}<br/>
-        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/>
+        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/><br/>
         <button onClick={() => {addInvestors();}}> add</button>
       
 
 
       </div>
-    
+      <br/>
+      {userAdmin? <div>
+        <button  onClick={()=>{Dashboar()}}>Dashboar</button>
+        </div>:""}
+   
+    <br/>
         </div>
     )
 }
