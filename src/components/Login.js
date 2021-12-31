@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
- 
+import "../style/Login.css"
 import axios from "axios";
 
 export default function Login({ setToken }) {
@@ -30,31 +30,19 @@ export default function Login({ setToken }) {
     }
   };
   return ( 
+    <div  id="main-conteners">
+   
     <div>
-    <div>
+    <h2 id="log">sign in</h2>
     <label>Email</label>
-      <input 
-        onChange={(e) => {
-          interEmail(e);
-        }}
-        placeholder="enter your email"
-      />
-      <br/>
+    <br/>
+      <input id="inpu11" onChange={(e) => {interEmail(e); }} placeholder="enter your email"/><br/>
       <label>Password</label>
-      <input
-        onChange={(e) => {
-          enterPassword(e);
-        }}
-        type="password"
-        placeholder="enter your password"
-      />
+      <br/>
+      <input id="input22" onChange={(e) => { enterPassword(e); }} type="password" placeholder="enter your password"/>
       <br/>
       
-      <button 
-        onClick={() => {
-          enterLogin();
-        }}
-      >
+      <button id="btn1" onClick={() => { enterLogin();}}>
         Login
       </button>
       </div>

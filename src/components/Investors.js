@@ -9,6 +9,7 @@ export default function Investors({token}) {
         <div className='container'>
         <Sidebar token={token} />
         <Home token={token}/>
+        
         </div>
         </div>
     )

@@ -40,11 +40,18 @@ const columns: GridColDef[] = [
     width: 200,
   },
   {
+    field: "amount",
+    headerName: "amount",
+    sortable: false,
+    width: 200,
+  },
+  {
     field: "Action",
     headerName: "Action",
     sortable: false,
     width: 200,
   },
+  
   {
     valueGetter: (params: GridValueGetterParams) =>
       `${params.getValue(params.id, "firstName") || ""} ${
@@ -125,6 +132,8 @@ const rows = [
     PhoneNumber: "055673015",
     Status: "active",
     Price: "2334",
+    amount: "12345"
+
   },
 ];
 
@@ -132,13 +141,13 @@ export default function User() {
   return (
     <div>
       <div>
-        <DeleteOutlineIcon />
+        <DeleteOutlineIcon  className="userListItim"/>
       </div>
-      <div style={{ height: 400, width: "100%" }}>
+      <div style={{ height: 600, width: "100%" }}>
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
+          pageSize={7}
           checkboxSelection
           disableSelectionOnClick
         />
@@ -146,3 +155,5 @@ export default function User() {
     </div>
   );
 }
+
+

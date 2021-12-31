@@ -38,6 +38,7 @@ export default function SignUp() {
         Identity:Identity,
       });
       console.log(response);
+    
       if (response.status === 201) {
         history.push("/login");
       }
@@ -46,20 +47,23 @@ export default function SignUp() {
     }
   };
   return (
-    <div>
-      <div id="maindiv">
-      <label>Name</label>
-        <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"/>
+    <div id="formInput">
+      <div>
+      <h2 id="Register">Register</h2>
+      <form >
+      <label>Name</label><br/>
+        <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"  id="input1"/>
        <br/>
-         <label>Email</label>
-        <input onChange={(e) => {changeEmail(e);}} placeholder="enter your email"/>
+         <label>Email</label><br/>
+        <input onChange={(e) => {changeEmail(e);}} placeholder="enter your email" id="input2"/>
         <br/>
-        <label>Password</label>
-        <input onChange={(e) => { changePassword(e); }} type="password" placeholder="enter your password" />
+        <label>Password</label><br/>
+        <input onChange={(e) => { changePassword(e); }} type="password" placeholder="enter your password" id="input3"/>
         <br/>
-        <label>Identity</label>
-        <input onChange={(e)=>{changeIdentity(e); }}></input><br/>
-        <button onClick={() => {addUser(); }}  placeholder="enter your Identity">Subscribe</button>
+        <label>Identity</label><br/>
+        <input onChange={(e)=>{changeIdentity(e); }} id="input3"  placeholder="enter your Identity"></input><br/>
+        <button onClick={() => {addUser(); }}  id="btn">Subscribe</button>
+        </form>
       </div>
     </div>
   );
