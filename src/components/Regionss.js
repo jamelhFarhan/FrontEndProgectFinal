@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import "../style/Regions.css"
 export default function Regionss() {
 
@@ -15,7 +16,7 @@ export default function Regionss() {
     return (
       
            
-    
+    <div id="rundiv">
     <div className='images'>
      <div className='imgee-container'>
      
@@ -27,7 +28,7 @@ export default function Regionss() {
      </div>
     
      <div className='imgee-container'>
-     <img  src='https://www.shorouknews.com/uploadedimages/Other/original/fdfgdsfgdfg848.jpg'/>
+     <img  src='https://neom.scene7.com/is/image/neom/replacement%204_2x?scl=1'/>
      <div className="reg-div-con">
      <button id="buttonOne"
      onClick={() => { Oxagons()}} > OXAGON
@@ -35,7 +36,7 @@ export default function Regionss() {
      </div>
     
      </div>
-   
+     </div>
    
     )
 }

@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import CreateIcon from '@material-ui/icons/Create';
+import "../style/beanenvestory.css"
 export default function BeAnAnvestor({token}) {
     const [Investors, setInvestors] = useState([])
 const [name, setname1] = useState("");
@@ -13,7 +15,7 @@ const [price, setprice] = useState("");
  const[priceUpdate, setpriceUpdate]=useState("");
  const[phoneNumberUpdate, setphoneNumberUpdate]=useState("");
  const [userAdmin, setUserAdmin] = useState(false);
-
+ const [togglie, setTogglie] = useState(false);
 
 useEffect(async () => {
     try {
@@ -78,21 +80,7 @@ try {
     }
   };
 /////////////////
-const deleteInvestors = async (id, i) => {
-    try {
-      const severes = await axios.delete(`http://localhost:5000/deletInvestors/${id}`,
-        {
-          headers: { authorization: "Bearer " + token },
-        }
-      );
-      const copied = [...Investors];
-      copied.splice(i, 1);
-      setInvestors(copied);
-      console.log(severes);
-    } catch (error) {
-      console.log("error");
-    }
-  };
+
      const UpdateInvestor = async(id,i) =>{
    try {
      const datainvestor = await axios.put(`http://localhost:5000/updateInvestors/${id}`,
@@ -161,10 +149,21 @@ const FuncName1=(e)=>{
     return (
       
         <div>
+        <div id="divinfest-0">
+        <p id="info-investor-">.</p>
+        <h1 id="info-investor-1">
+        INVEST IN <br/>
+        THE FUTURE OF <br/>
+      <br/>
+        NEOM
+
+        </h1>
+        </div>
         
        {userAdmin ? "" : ""}
-        <h1>hey</h1>
+     
         <div>
+        <div  id="form-investor">
         {Investors.map((elem, i) => {
           return (
             <div  key={elem._id}>
@@ -174,25 +173,43 @@ const FuncName1=(e)=>{
               <p>{elem.price}</p>
               <br/> 
 
- 
+
+
+               <CreateIcon
+               onClick={() => {
+                 setTogglie(!togglie);
+               }}
+             >
+               {" "}
+               update{" "}
+             </CreateIcon>{" "}
+             {togglie === true ? (
+               <form>
                <input onChange={(e) => { Upname(e); }} placeholder="name" value={nameUpdate}/>{" "}<br/>
-              <input onChange={(e) => { Upemail(e); }} placeholder="email" value={emailUpdate}/>{" "}<br/>
-               <input onChange={(e) => { UpphoneNumber(e); }} placeholder="phoneNumber" type={"number"} value={phoneNumberUpdate}/>{" "}<br/>
-               <input onChange={(e) => { Upprice(e); }} placeholder="amount" value={priceUpdate}/>{" "}<br/>
-               <button onClick={()=> {UpdateInvestor (elem._id, i);}}>{""}Updated{""}</button><br/>
-               <br/>
-               <button onClick={() => { deleteInvestors(elem._id, i);}} >  delete{" "}</button><br/>
-             
+                 <br />
+                 <input onChange={(e) => { Upemail(e); }} placeholder="email" value={emailUpdate}/>{" "}<br/>
+                 <br />
+                 <input onChange={(e) => { UpphoneNumber(e); }} placeholder="phoneNumber" type={"number"} value={phoneNumberUpdate}/>{" "}<br/>
+                 <br />
+                 <input onChange={(e) => { Upprice(e); }} placeholder="amount" value={priceUpdate}/>{" "}<br/>
+               </form>
+             ) : (
+               ""
+             )}
+           
+              
             </div>
           );
         })}
+        </div>
         <br/>
+     
         <input onChange={(e) => { FuncName1(e); }} placeholder="name" value={name}/>{" "}<br/>
         <input onChange={(e) => { FunceMail(e); }} placeholder="email" value={email}/>{" "}<br/>
         <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" value={phoneNumber} type={"number"}/>{" "}<br/>
         <input onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/><br/>
         <button onClick={() => {addInvestors();}}> add</button>
-      
+       
 
 
       </div>

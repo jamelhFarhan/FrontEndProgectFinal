@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+
+import "../style/Region.css"
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
+import ImageSearchIcon from '@material-ui/icons/ImageSearch';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 export default function Region({ token }) {
   const history = useHistory();
   const [Regions, setRegions] = useState([]);
@@ -13,9 +18,9 @@ export default function Region({ token }) {
   const [updateimg, setupdateimg] = useState("");
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
-  // import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
+ 
   ////////
-
+  const id ="Jw8Oq8Bjprk"
   //--------------------get Regin----------
   useEffect(async () => {
     try {
@@ -170,33 +175,61 @@ export default function Region({ token }) {
 
   return (
     <>
+    
 
-
-
-
-
-
-
-
-
+ 
+    <div >
+    <iframe  
+    width={1600}
+    height={800}
+    src={`https://www.youtube.com/embed/${id}`}>
+    </iframe>
+    </div>
+    <div id="the-line">
+    <img id="img-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHmY6uU3Od46-y61h2zqlv-MHGAQfBDGdhg&usqp=CAU"/>
+    <p id="mohamed">
+    “I present to you THE LINE, a city of a million <br/>
+    <br/>
+    residents with a length of 170 km that <br/>
+    <br/>
+    preserves 95% of nature within NEOM, with <br/>
+    <br/>
+    zero cars, zero streets and zero carbon <br/>
+    <br/>
+                   emissions.”
+    </p>
+    <h5 id="royle">
+    His Royal Highness
+    </h5>
+    <h3 id="Crown">
+    Mohammed bin Salman, Crown Prince and Chairman of the NEOM Company Board of Directors
+    </h3>
+    
+    
+    </div>
        {adminToggil ? "" : ""}
-      <div>
+     <div>
+     <input id="cearsh" placeholder="search" onChange={(e) => { FiandRegin(e); }}/>
+     <ImageSearchIcon id="search-main" onClick={() => { FuncSearsh(); }} > {" "} search.{" "}</ImageSearchIcon>
+     </div>
       
         <div>
-          <input placeholder="search" onChange={(e) => { FiandRegin(e); }}/>
-          <button onClick={() => { FuncSearsh(); }} > {" "} search.{" "}</button>
+
         </div>
 
         <br />
         <br />
+        
         {Regions.map((element, i) => {
           return (
+            
             <div key={element._id}>
               <p>name:{element.name}</p>
 
               <img src={element.img} alt=" " />
-              <button 
-                onClick={() => {  Favorite(element._id); }} >Favorite </button>
+              <br/>
+              <br/>
+              <FavoriteBorderIcon  onClick={() => {  Favorite(element._id); }} > </FavoriteBorderIcon>
               <p> description : {element.description}</p>
 
               <div>
@@ -247,17 +280,22 @@ export default function Region({ token }) {
             </div>
           );
         })}
-      </div>
+     
     {adminToggil? <div>
-      <label for="Name">Name</label>
-        <input onChange={(e) => { FuncName(e);}} placeholder="name" value={name}/>{" "}
+      <div className="insertadmin">
+      <label className="lable" for="Name">Name</label>
+        <input  className="input" onChange={(e) => { FuncName(e);}} placeholder="name" value={name}/>{" "}
         <br/>
-        <label for="description">Description</label>
-        <input onChange={(e) => { FuncDesc(e); }}  placeholder="description" value={description}/>{" "}<br/>
-        <label for="img">Img</label>
-        <input onChange={(e) => { FuncImg(e); }}  placeholder="img" value={img}/><br/>
-        <button onClick={() => { addRegion(); }} > add</button>
+        
+        <label className="lable" for="description">Description</label>
+        <input className="input" onChange={(e) => { FuncDesc(e); }}  placeholder="description" value={description}/>{" "}<br/>
+        <label className="lable"  for="img">Img</label>
+        <input className="input" onChange={(e) => { FuncImg(e); }}  placeholder="img" value={img}/><br/>
+        <AddToPhotosIcon id="add" onClick={() => { addRegion(); }} > add</AddToPhotosIcon>
+         </div>        
+
       </div>:""}
+      
 
       
     </>

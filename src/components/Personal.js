@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-// import Button from '@mui/material/Button'
+import"../style/Personal.css"
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 export default function Personal({ token }) {
   const [Like, setLike] = useState([]);
 
@@ -31,22 +31,25 @@ export default function Personal({ token }) {
 
   return (
     <div>
-      <h1>hay from Personal</h1>
+     
       {Like.map((elem, i) => {
         return (
           <div>
             <p>{elem.name}</p>
 
-            <img src={elem.img} alt="no" />
-            <button
+            <img id="imgper" src={elem.img} alt="no" />
+            <br/>
+            <br/>
+            <DeleteOutlineIcon
               onClick={() => {
                 removFavourites(elem._id, i);
               }}
              >
              
               remove
-            </button>
+            </DeleteOutlineIcon>
             <p>{elem.description}</p>
+         
           </div>
         );
       })}

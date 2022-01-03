@@ -4,11 +4,11 @@ import "../style/Nav.css"
 export default function Navbar({ token, setToken }) {
   const history = useHistory();
   return (
-    <div>
+    <div className="topbarr1">
+    
     <nav>
     
    
-    <img id="img" src="https://www.neom.com/content/dam/neom/logos/logo-neom.png"/>
   <div className="nav-linkes">
       {token ? (
         <ul>
