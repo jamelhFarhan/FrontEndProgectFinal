@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+ 
  
   const history = useHistory();
   const interEmail = (e) => {
@@ -22,9 +22,11 @@ export default function Login({ setToken }) {
       const response = await axios.post("http://localhost:5000/login", {
         email:email, password:password
       });
+      
       setToken(response.data.token);
       // localStorage.setItem("token", JSON.stringify(response.data.token))
       history.push("/Regionss");
+      
     } catch (error) {
       console.log(error);
     }

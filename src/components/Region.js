@@ -6,6 +6,7 @@ import "../style/Region.css"
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import ImageSearchIcon from '@material-ui/icons/ImageSearch';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ProgressBar from "./ProgressBar"
 export default function Region({ token }) {
   const history = useHistory();
   const [Regions, setRegions] = useState([]);
@@ -18,6 +19,9 @@ export default function Region({ token }) {
   const [updateimg, setupdateimg] = useState("");
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
+  const [file, setFile] = useState(null);
+  const [error, setError] = useState(null);
+
  
   ////////
   const id ="Jw8Oq8Bjprk"
@@ -173,6 +177,33 @@ export default function Region({ token }) {
     }
   };
 
+
+//// upload img 
+
+const types = ['image/png', 'image/jpeg']; 
+
+    const handleChange=(e)=>{
+        let selected = e.target.files[0];
+        console.log(selected);
+
+if (selected && types.includes(selected.type)){
+    setFile(selected);
+    setError('');
+} else{
+    setFile(null);
+    setError('Please select an image file (png or jpg)');
+    
+}
+
+    }
+
+
+
+
+
+
+
+
   return (
     <>
     
@@ -291,6 +322,17 @@ export default function Region({ token }) {
         <input className="input" onChange={(e) => { FuncDesc(e); }}  placeholder="description" value={description}/>{" "}<br/>
         <label className="lable"  for="img">Img</label>
         <input className="input" onChange={(e) => { FuncImg(e); }}  placeholder="img" value={img}/><br/>
+        <div>
+        <label>
+        <input type="file" onChange={handleChange} />
+       
+      </label>
+      <div className="output">
+        { error && <div className="error">{ error }</div>}
+        { file && <div>{ file.name }</div> }
+        { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg}/> }
+      </div>
+        </div>
         <AddToPhotosIcon id="add" onClick={() => { addRegion(); }} > add</AddToPhotosIcon>
          </div>        
 

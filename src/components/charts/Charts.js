@@ -16,12 +16,12 @@ try {
 
  const datauser = await axios.get("http://localhost:5000/userdashbord",{
   headers: { authorization: "Bearer " + token },
- }) 
- setUser(datauser.data)
- console.log("dadt" ,datauser.data);
+  }) 
+  setUser(datauser.data);
+ console.log("data bb" ,datauser.data);
 
- console.log("name" ,datauser.data[0].name);
- console.log("price" ,datauser.data[0].price);
+ //console.log("name" ,datauser.data[0].name);
+ //console.log("price" ,datauser.data[0].price);
 
  
 } catch (error) {
@@ -35,20 +35,22 @@ try {
   
       <div className='chart'>
       <h3 className='charTitle'>Users investor</h3>
-      <ResponsiveContainer width="100%" aspect={3/1}>
       
-       <LineChart data={user}>
-       <YAxis type="number" domain={[0, 100000]} stroke='#5550bd'/>
-       <XAxis dataKey="name" stroke='#5550bc'/>
+      {user.length ? <ResponsiveContainer width="100%" aspect={3/1}>
       
-       <Line type="monotone" dataKey="price" stroke="#5550bd" />
+      <LineChart data={user}>
+      <YAxis type="number" domain={[0, 100000]} stroke='#5550bd'/>
+      <XAxis dataKey="name" stroke='#5550bc'/>
      
+      <Line type="monotone" dataKey="price" stroke="#5550bd" />
+    
 
-       <Tooltip />
-      <CartesianGrid stroke='#e0dfdf' strokeDasharray=" 5 5"/>
-       </LineChart> 
-       
-      </ResponsiveContainer>
+      <Tooltip />
+     <CartesianGrid stroke='#e0dfdf' strokeDasharray=" 5 5"/>
+      </LineChart> 
+      
+     </ResponsiveContainer>:""}
+      
           <div> 
           
           </div>

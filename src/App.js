@@ -15,12 +15,11 @@ import SECTORS from "./components/SECTORS";
  import Manufacturing  from "./Sectors/Manufacturing";
  import DigitalTechnology from "./Sectors/DigitalTechnology";
 import User from "./components/Users/User";
-  
-
 
 import { Route } from "react-router";
 export default function App() {
   const [token, setToken] = useState("");
+ 
 
   // useEffect(() => {
   //   if(!token && localStorage.getItem("token") !== ""){
@@ -39,7 +38,8 @@ export default function App() {
           return <Regionss token={token} />;
         }}
       />
-
+     
+    
       <Route
         exact
         path="/SECTORS"

@@ -7,6 +7,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [Identity ,setIdentity]=useState("");
+ 
   const history = useHistory();
   const changeName = (e) => {
     setName(e.target.value);
@@ -44,7 +45,7 @@ export default function SignUp() {
       }
     } catch (error) {
       // console.log("err");
-    }
+    } 
   };
   return (
     <div id="formInput">
