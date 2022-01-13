@@ -301,7 +301,7 @@ if (selected && types.includes(selected.type)){
         <br />
         
         {Regions.map((element, i) => {
-          let hart= "gray"
+          let hart= "green"
            for (let i = 0; i < favList.length; i++) {
              if (element._id == favList[i]._id){
                hart = "red"
@@ -317,13 +317,15 @@ if (selected && types.includes(selected.type)){
               <img src={element.img} alt=" " />
               <br/>
               <br/>
-              { hart== "gray" ?
-               <button onClick={() => {  Favorite(element._id); }} > favorite</button> 
+              { hart== "green" ?
+               <button onClick={() => {  Favorite(element._id); }}  style={{color:"red"}}>add</button> 
               :
                <button  onClick={() => {
                 removFavourites(element._id, i);
-              }}>delet</button> 
+              }}> delet</button> 
+              
             }
+            
               <p> description : {element.description}</p>
              
               <div>

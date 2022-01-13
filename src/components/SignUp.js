@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../style/SingUp.css";
-// import www from "./video/www.mp4";
+ import www from "../video/www.mp4";
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -67,7 +67,7 @@ export default function SignUp() {
     }}
    >
   
-   <source  type="video/mp4"/>
+   <source  src={ www} type="video/mp4"/>
 
 
 

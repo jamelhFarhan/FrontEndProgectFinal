@@ -1,10 +1,10 @@
 import React from 'react'
 
-// import twitt from "./video/twitt.png"
+ import twitt from "./mdea/twitt.png"
  import github from "./mdea/github.png"
-// import youtub from "./video/youtub.png"
-// import link from "./video/link.png"
-// import insta from "./video/insta.png"
+ import youtub from "./mdea/youtub.png"
+ import link from "./mdea/link.png"
+ import insta from "./mdea/insta.png"
 
 import "../style/about.css";
 
@@ -101,7 +101,7 @@ export default function AboutUs() {
        href="https://twitter.com/j_8855"
        target="_NEOM"
      >
-     <img
+     <img src={twitt}
      className="guthub"
      title="twitter"
      
@@ -116,7 +116,7 @@ export default function AboutUs() {
      href="https://www.youtube.com/channel/UCU2yVzyaauEhJmBSfOZcLEw"
      target="_NEOM"
    >
-   <img src=''
+   <img src={youtub}
    className="guthub"
    title="youtub"
    
@@ -131,7 +131,7 @@ export default function AboutUs() {
    href="https://www.linkedin.com/in/jamelhfarhan/"
    target="_NEOM"
  >
- <img
+ <img src={link}
  className="guthub"
  title="linkedin"
  
@@ -147,7 +147,7 @@ export default function AboutUs() {
  href="https://www.instagram.com/j_a_1994/"
  target="_NEOM"
 >
-<img
+<img src={insta}
 className="guthub"
 title="instagram"
 

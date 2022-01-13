@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../style/Login.css"
-// import www from "./video/www.mp4"
+ import www from "../video/www.mp4"
 import axios from "axios";
 
 export default function Login({ setToken }) {
@@ -64,7 +64,7 @@ export default function Login({ setToken }) {
     }}
    >
   
-   <source type="video/mp4"/>
+   <source   src={www} type="video/mp4"/>
 
 
 

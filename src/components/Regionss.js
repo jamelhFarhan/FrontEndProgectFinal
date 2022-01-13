@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-// import www from "./video/www.mp4"
+ import www from "../video/www.mp4"
 
 import "../style/Regions.css"
 export default function Regionss() {
@@ -30,7 +30,7 @@ export default function Regionss() {
       }}
      >
     
-     <source  type="video/mp4"/>
+     <source src={www} type="video/mp4"/>
 
 
 
