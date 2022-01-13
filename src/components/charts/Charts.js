@@ -18,7 +18,7 @@ try {
   headers: { authorization: "Bearer " + token },
   }) 
   setUser(datauser.data);
- console.log("data bb" ,datauser.data);
+ console.log("users",datauser.data);
 
  //console.log("name" ,datauser.data[0].name);
  //console.log("price" ,datauser.data[0].price);

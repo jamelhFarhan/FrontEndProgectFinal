@@ -10,12 +10,15 @@ const firebaseConfig = {
     messagingSenderId: "173501665589",
     appId: "1:173501665589:web:d03a6c8a39a99ea9cc7c7c"
   };
+
+ 
   
   // Initialize Firebase
+ 
  
   firebase.initializeApp(firebaseConfig);
   const projectStorage = firebase.storage();
   const projectFirestore  =firebase.firestore();
   const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-  export { projectStorage ,projectFirestore ,timestamp}
+  export { projectStorage ,projectFirestore ,timestamp , firebase}
   

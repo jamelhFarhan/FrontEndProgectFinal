@@ -4,6 +4,8 @@ import"../style/Personal.css"
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 export default function Personal({ token }) {
   const [Like, setLike] = useState([]);
+ 
+
 
   useEffect(async () => {
     try {
@@ -12,6 +14,7 @@ export default function Personal({ token }) {
           headers: { authorization: "Bearer " + token },
         });
         setLike(result.data);
+      
         console.log(result.data, "likes");
       }
     } catch (error) {
@@ -30,25 +33,27 @@ export default function Personal({ token }) {
   };
 
   return (
-    <div>
-     
+    <div id="imgper">
+  
       {Like.map((elem, i) => {
         return (
           <div>
-            <p>{elem.name}</p>
+            <p  id="name-personal">Name:  {elem.name} </p>
 
-            <img id="imgper" src={elem.img} alt="no" />
+            <img id="img-personal" src={elem.img} alt="no" />
             <br/>
             <br/>
-            <DeleteOutlineIcon
+            <p id="desc-personal">description: <br/> {elem.description}</p>
+            <button id="butn-brsonal"
               onClick={() => {
                 removFavourites(elem._id, i);
               }}
              >
              
-              remove
-            </DeleteOutlineIcon>
-            <p>{elem.description}</p>
+              
+              REMOVE
+            </button>
+           
          
           </div>
         );

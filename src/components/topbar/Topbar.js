@@ -28,8 +28,8 @@ export default function Topbar() {
         <SettingsIcon/>
     
         </div>
-         <img src='https://i.pinimg.com/564x/21/3f/4b/213f4b68c94d525adf6ba158080aad2c.jpg' className='topAvatar'/>
-         </div>
+         <img src='https://i.pinimg.com/564x/21/3f/4b/213f4b68c94d525adf6ba158080aad2c.jpg' className='topAvatar'/> 
+    </div>
         
          </div>
             

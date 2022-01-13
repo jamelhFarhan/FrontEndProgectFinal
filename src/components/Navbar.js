@@ -29,19 +29,14 @@ export default function Navbar({ token, setToken }) {
           </li>
 
 
-          <li>
-          <Link className="link" to="/BeAnAnvestor">
-         
-          BeAnAnvestor
-          </Link>
-        </li>
       
       
         
         <li>
-        <Link className="link" to="/SECTORS">
+        <Link className="link" to="/AboutUs">
        
-        SECTORS
+       
+        ABOUT US
         </Link>
       </li>
           <li>
@@ -50,7 +45,7 @@ export default function Navbar({ token, setToken }) {
               to="/login"
               onClick={() => {
                 setToken("");
-                localStorage.setItem("token", "")
+               
               }}
             >
            

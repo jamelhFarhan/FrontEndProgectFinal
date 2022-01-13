@@ -1,33 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Cairo:wght@500&family=Comfortaa:wght@300&family=Lato&family=Open+Sans+Condensed:ital,wght@0,300;1,300&family=Open+Sans:ital,wght@1,500&family=Poppins:ital@1&family=Roboto+Condensed:ital,wght@0,300;0,400;1,400&family=Source+Sans+Pro:ital,wght@0,200;1,200;1,300&family=Source+Serif+Pro:ital,wght@0,200;0,300;1,300&display=swap');
 
-.main-div-users{
+.table{
+ position: relative;
+ top: 200px;
+  left: 50px;
+ 
+width: 90%;
+height: 100px;
+color:rgba(0, 0, 0, 0.863) ;
+font-size: larger;
+font-family: sans-serif;
+text-align: center;
+font-style: italic;   
+
+
+}
+
+
+
+ .main-div-users{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+ 
     
 }
-table{
 
-    width: 90%;
-    height: 500px;
-    margin: 40px;
-    
-}
 .th{
     margin: 50px; 
-    background-color: rgba(228, 228, 250, 0.986) ;
+    background-color: rgba(0, 0, 0, 0.13) ;
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
     height: 90px;
+    border: grey  1px ;
 }
-.td{
+
+/* #name-n-u{
+    margin-left: 180px;
+} */
+
+/* 
+  .td{
     position: relative;
     left: 90px;
     
+}    */
+  #delet-h-j{
+    margin-left: 15px;
+    margin-top: 30px;
+    width: 110px; 
+    height:40px;
+    background-color:rgba(189, 31, 39, 0.781);
+    border-radius: 10px;
+    border:none;
+  font-size: large;
+  font-family: sans-serif;
+  color: white;
+  cursor: pointer;
+  opacity: 0.9;
+
+} 
+#butn-user-edit{
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 110px; 
+    height:40px;
+   background-color: seagreen;
+    border-radius: 10px;
+    border:none;
+  font-size: large;
+  font-family: sans-serif;
+  color: white;
+  cursor: pointer;
+  opacity: 0.9;
+  
+   
 }
-#deletinfo{
-    position: relative;
-    left: 90px; 
-    top: 45px;
+#butn-amount{
+width: 140px; 
+height: 40px;
+text-align: center;
+border-radius: 10px;
+margin-left: 5px;
+background-color: rgba(59, 56, 56, 0.068) ;
 
 }
+#name-user{
+    color:rgba(0, 0, 0, 0.795) ;
+  font-size: larger;
+  font-family: sans-serif;
+  text-align: center;
+  font-style: italic;
+
+}
+#price-user{
+    color:rgba(0, 0, 0, 0.849) ;
+    font-size: larger;
+    font-family: sans-serif;
+    text-align: center;
+    font-style: italic;   
+}
+#email-user{
+    color:rgba(0, 0, 0, 0.842) ;
+    font-size: larger;
+    font-family: sans-serif;
+    text-align: center;
+    font-style: italic;   
+}
+#phone-user{
+    color:rgba(0, 0, 0, 0.863) ;
+    font-size: larger;
+    font-family: sans-serif;
+    text-align: center;
+    font-style: italic; 
+      
+}
+

@@ -8,18 +8,17 @@ import Region from "./components/Region";
 import Personal from "./components/Personal";
 import Investors from "./components/Investors";
 import Oxagon from "./components/Oxagon";
-import SECTORS from "./components/SECTORS";
+import AboutUs from "./components/AboutUs";
  import BeAnAnvestor from "./components/BeAnAnvestor";
- import Energe from "./Sectors/Energe";
- import Media from "./Sectors/Media";
- import Manufacturing  from "./Sectors/Manufacturing";
- import DigitalTechnology from "./Sectors/DigitalTechnology";
+ 
 import User from "./components/Users/User";
 
 import { Route } from "react-router";
 export default function App() {
   const [token, setToken] = useState("");
- 
+  // const [ usurSigin ,setusurSigin]=useState(true);
+  
+    
 
   // useEffect(() => {
   //   if(!token && localStorage.getItem("token") !== ""){
@@ -27,9 +26,16 @@ export default function App() {
   //   }
   // }, [])
 
+
+  
+
+
   return (
     <div>
       <NavBar token={token} setToken={setToken} />
+
+
+     
 
       <Route
         exact
@@ -42,9 +48,9 @@ export default function App() {
     
       <Route
         exact
-        path="/SECTORS"
+        path="/AboutUs"
         render={() => {
-          return <SECTORS token={token} />;
+          return <AboutUs token={token} />;
         }}
       />
       <Route
@@ -68,34 +74,10 @@ export default function App() {
         return <BeAnAnvestor token={token}/>;
       }}
     />
-    <Route
-      exact
-      path="/Energe"
-      render={() => {
-        return <Energe token={token}/>;
-      }}
-    />
-    <Route
-    exact
-    path="/Media"
-    render={() => {
-      return <Media token={token}/>;
-    }}
-  />
-  <Route
-    exact
-    path="/Manufacturing"
-    render={() => {
-      return <Manufacturing token={token}/>;
-    }}
-  />
-  <Route
-    exact
-    path="/DigitalTechnology"
-    render={() => {
-      return <DigitalTechnology token={token}/>;
-    }}
-  />
+   
+   
+ 
+  
     
   
       <Route

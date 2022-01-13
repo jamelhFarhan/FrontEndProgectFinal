@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import CreateIcon from '@material-ui/icons/Create';
+// import xxvv from "./video/xxvv.mp4";
 import "../style/beanenvestory.css"
 export default function BeAnAnvestor({token}) {
     const [Investors, setInvestors] = useState([])
@@ -10,12 +10,9 @@ const [name, setname1] = useState("");
 const [email, setemail] = useState("");
 const [phoneNumber, setphoneNumber] = useState("");
 const [price, setprice] = useState("");
- const [nameUpdate ,setnameUpdate]=useState("");
- const[emailUpdate, setemailUpdate]=useState("");
- const[priceUpdate, setpriceUpdate]=useState("");
- const[phoneNumberUpdate, setphoneNumberUpdate]=useState("");
  const [userAdmin, setUserAdmin] = useState(false);
- const [togglie, setTogglie] = useState(false);
+//  const [ tooglee ,settooglee] =useState(false)
+ 
 
 useEffect(async () => {
     try {
@@ -25,13 +22,10 @@ useEffect(async () => {
         headers: { authorization: "Bearer " + token },
       });
       setInvestors(findInvestors.data);
-      setnameUpdate(findInvestors.data.nameUpdate);
-      setemailUpdate(findInvestors.data.emailUpdate);
-      setpriceUpdate(findInvestors.data.priceUpdate);
-      setphoneNumberUpdate(findInvestors.data.phoneNumberUpdate)
+      
        console.log(findInvestors.data);
     } catch (error) {
-      console.log(error);
+      console.log("errrr inv");
     }
 try {
   const AdminI =await axios.get("http://localhost:5000/getDamin",{
@@ -39,11 +33,12 @@ try {
   })
   if (AdminI.data.Admin === true) {
     setUserAdmin(true);
-    console.log(AdminI);
+    console.log(setUserAdmin);
+
   }
 
 } catch (error) {
-  
+ console.log("error admain"); 
 }
 
 
@@ -79,36 +74,10 @@ try {
       console.log("errrorrr here");
     }
   };
-/////////////////
 
-     const UpdateInvestor = async(id,i) =>{
-   try {
-     const datainvestor = await axios.put(`http://localhost:5000/updateInvestors/${id}`,
-     {
-       name: nameUpdate,
-      email : emailUpdate,
-       phoneNumber:phoneNumberUpdate,
-       price:priceUpdate,
-     },
-     {
-       headers: { authorization: "Bearer " + token },
-     }
-    
-     ) ;
 
-//   //   ///////////
-    const ArrCopeeid=[...Investors];
-    ArrCopeeid[i]=datainvestor.data;
-    setInvestors(ArrCopeeid);
-    console.log(datainvestor.data);
-    setnameUpdate("")
-    setemailUpdate("")
-    setpriceUpdate("")
-    setphoneNumberUpdate("")
-  } catch (error) {
-     console.log(error);
-   }
-       }
+
+
 
 
 //////////////////
@@ -125,100 +94,115 @@ const FuncName1=(e)=>{
     setprice(e.target.value); 
   } ;
 
-
-
- const Upname=(e)=>{
-        setnameUpdate (e.target.value); 
-      };
-      const Upemail=(e)=>{
-        setemailUpdate (e.target.value); 
-      };
-      const Upprice=(e)=>{
-        setpriceUpdate (e.target.value); 
-      };
-      const UpphoneNumber=(e)=>{
-        setphoneNumberUpdate (e.target.value); 
-      };
+/////////////////
      
 
         const history = useHistory();
     const  Dashboar= () => {
       history.push("/investors");
     }
-      
+      /////////////////
     return (
       
         <div>
-        <div id="divinfest-0">
-        <p id="info-investor-">.</p>
-        <h1 id="info-investor-1">
-        INVEST IN <br/>
-        THE FUTURE OF <br/>
-      <br/>
-        NEOM
-
-        </h1>
-        </div>
+        
         
        {userAdmin ? "" : ""}
      
         <div>
+
+        {/*<video 
+        autoPlay  loop muted
+         style={{ position:"fixed" ,
+          width:"100%",
+          left:"0%",
+          top:"0%",
+         
+        objectFit:"cover",
+        transorm:"translate(-50%, -50%)",
+        zIndex:"-1",
+        height:"95%"
+        ,
+        }}
+       >
+      
+       <source src={xxvv} type="video/mp4"/>
+  
+  
+  
+       
+      </video>  */}
+       <div id="pic-ground" >
+     {/* <button  id="invest-toggle" onClick={()=>{settooglee(!tooglee) }}>be an investor</button> <br/> */}
+     
+     <h6>.</h6> <br/>
+              <form id="div-f0rm">
+              <h3 id="For-for">For a better future</h3> <br/>
+              <h1 id="for2-for-2">Invest with NEOM</h1>
+              <br/>
+              <input  className="all-input-investor" onChange={(e) => { FuncName1(e); }} placeholder="name" value={name}/>{" "}<br/>
+              <input className="all-input-investor" onChange={(e) => { FunceMail(e); }} placeholder="email" value={email}/>{" "}<br/>
+              <input className="all-input-investor" onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" value={phoneNumber} type={"number"}/>{" "}<br/>
+              <input className="all-input-investor" onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/><br/>
+            
+       
+              </form>
+              
+            
+
+            <button id="input-invrsty0" onClick={() => {addInvestors();}}> send</button>
+
+            </div>
+
+            <div id="color-invest-1-1">
         <div  id="form-investor">
         {Investors.map((elem, i) => {
           return (
-            <div  key={elem._id}>
-              <p> {elem.name}</p>
-              <p> {elem.email}</p>
-              <p>{elem.phoneNumber}</p>
-              <p>{elem.price}</p>
+            <div id="all-item"  key={elem._id}>
+              <p className="pb"> Name :  {elem.name}</p>
+              <p>  Email :  {elem.email}</p>
+              <p> Phone  :  {elem.phoneNumber}</p>
+              <p> Amount : {elem.price}</p>
               <br/> 
-
-
-
-               <CreateIcon
-               onClick={() => {
-                 setTogglie(!togglie);
-               }}
-             >
-               {" "}
-               update{" "}
-             </CreateIcon>{" "}
-             {togglie === true ? (
-               <form>
-               <input onChange={(e) => { Upname(e); }} placeholder="name" value={nameUpdate}/>{" "}<br/>
-                 <br />
-                 <input onChange={(e) => { Upemail(e); }} placeholder="email" value={emailUpdate}/>{" "}<br/>
-                 <br />
-                 <input onChange={(e) => { UpphoneNumber(e); }} placeholder="phoneNumber" type={"number"} value={phoneNumberUpdate}/>{" "}<br/>
-                 <br />
-                 <input onChange={(e) => { Upprice(e); }} placeholder="amount" value={priceUpdate}/>{" "}<br/>
-               </form>
-             ) : (
-               ""
-             )}
-           
+          
               
             </div>
           );
         })}
         </div>
         <br/>
-     
-        <input onChange={(e) => { FuncName1(e); }} placeholder="name" value={name}/>{" "}<br/>
-        <input onChange={(e) => { FunceMail(e); }} placeholder="email" value={email}/>{" "}<br/>
-        <input onChange={(e) => { FuncPhone(e); }} placeholder="phoneNumber" value={phoneNumber} type={"number"}/>{" "}<br/>
-        <input onChange={(e) => { FuncPrice(e); }} placeholder="amount" value={price}/>{" "}<br/><br/>
-        <button onClick={() => {addInvestors();}}> add</button>
-       
+        
+        {userAdmin? <div>
+          <button  id="dash-b0td" onClick={()=>{Dashboar()}}>Admin Control Panel</button>
+          </div>:""}
+        
+        </div>
+        <br/>
+        
+        <div>
 
+       
+      
+
+
+
+      
+        
+      
+    
+      
+    
+      
+        </div>
 
       </div>
       <br/>
-      {userAdmin? <div>
+     {/* {userAdmin? <div>
         <button  onClick={()=>{Dashboar()}}>Dashboar</button>
-        </div>:""}
+     </div>:""} */}
    
     <br/>
+    
         </div>
     )
 }

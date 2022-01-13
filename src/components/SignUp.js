@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "../style/SingUp.css"
+import "../style/SingUp.css";
+// import www from "./video/www.mp4";
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,14 +24,15 @@ export default function SignUp() {
     setIdentity(e.target.value);
   }
 
-  const addUser = async () => {
-  
+  const addUser = async (e) => {
+    e.preventDefault();
     console.log({
       name: name,
       email: email,
       password: password,
       Identity:Identity,
     });
+
     try {
       const response = await axios.post("http://localhost:5000/signUp", {
         name: name,
@@ -41,16 +43,51 @@ export default function SignUp() {
       console.log(response);
     
       if (response.status === 201) {
+        console.log("hanan");
         history.push("/login");
       }
     } catch (error) {
-      // console.log("err");
+      console.log("err");
     } 
   };
   return (
+    <>
+
+    <video 
+    autoPlay loop muted
+     style={{ position:"fixed" ,
+      width:"100%",
+      left:"0%",
+      top:"0%",
+     
+    objectFit:"cover",
+    transorm:"translate(-50%, -50%)",
+    zIndex:"-1",
+    height:"150%"
+    }}
+   >
+  
+   <source  type="video/mp4"/>
+
+
+
+   
+  </video>
+
+
     <div id="formInput">
-      <div>
-      <h2 id="Register">Register</h2>
+
+    <div>
+    <div id="logggo-2">
+    <img src="https://yt3.ggpht.com/ytc/AKedOLRZiVaOhiyopxkS1brKSeKMrG9aOxkK020nA1BaSA=s176-c-k-c0x00ffffff-no-rj"  width={130}/>
+    <br/>
+    
+    <h2 >Welcome to Neom</h2>
+    </div>
+
+<br/>
+<br/>
+      
       <form >
       <label>Name</label><br/>
         <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"  id="input1"/>
@@ -63,9 +100,10 @@ export default function SignUp() {
         <br/>
         <label>Identity</label><br/>
         <input onChange={(e)=>{changeIdentity(e); }} id="input3"  placeholder="enter your Identity"></input><br/>
-        <button onClick={() => {addUser(); }}  id="btn">Subscribe</button>
+        <button onClick={(e) => {addUser(e); }}  id="btn">register</button>
         </form>
       </div>
     </div>
+    </>
   );
 }

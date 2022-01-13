@@ -4,7 +4,7 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    /* background-color: rgba(255, 255, 255, 0); */
+   
 }
 nav{
 
@@ -12,20 +12,15 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 13vh;
+    position: fixed;
+    width: 100%;
     top: 0;
+   
     z-index: 999;
-    background-color: rgba(0, 0, 0, 0.116);
-    
-} 
-/* #img{
-  width: 100px;
-  height: 50px;
-  cursor: pointer;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+   background-color: rgba(0, 0, 0, 0.13);
   
-} */
+} 
+
 
  .nav-linkes{
   display: flex;
@@ -33,12 +28,13 @@ nav{
 width: 45;
 
 
+
 }
 .link {
   text-decoration: none;
- color: black;
+color: white;
  font-size: medium;
- 
+
 }
 li {
   display: inline-block;
@@ -48,7 +44,7 @@ li {
 
 
 
-@media screen and (max-width:1024px){
+@media screen and (max-width:769)and(max-width:1024px){
   nav-linkes{
     position: absolute;
   right: 0px;
@@ -64,7 +60,7 @@ transform: translateX(80%);
   }
  }
 
- @media screen and (max-width:768px) {
+ @media screen and (max-width:401)and (max-width:768px) {
   body{
     overflow-x: hidden;
  
@@ -74,7 +70,7 @@ transform: translateX(80%);
   right: 0px;
   height: 14vh;
   top: 8vh;
-  /* background-color:hsla(0, 0%, 0%, 0.055); */
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,15 +85,13 @@ transform: translateX(100%);
 
 @media screen and (max-width:400px) {
 
-body{
-  background-color: blueviolet;
-}
+
   nav-linkes{
     position: absolute;
     right: 0px;
     height: 16vh;
     top: 8vh;
-    background-color:hsla(0, 0%, 0%, 0.055);
+    
     display: flex;
     flex-direction: column;
     align-items: center;

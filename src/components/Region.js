@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
-
-import "../style/Region.css"
-import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
-import ImageSearchIcon from '@material-ui/icons/ImageSearch';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import axios from "axios";
+import { BsFillHeartFill } from "react-icons/bs";
+//  import ttoo from "./video/ttoo.mp4"
+import "../style/Region.css"
+
+import ImageSearchIcon from '@material-ui/icons/ImageSearch';
+
 import ProgressBar from "./ProgressBar"
+import { red } from "@material-ui/core/colors";
 export default function Region({ token }) {
   const history = useHistory();
   const [Regions, setRegions] = useState([]);
@@ -17,14 +20,16 @@ export default function Region({ token }) {
   const [updateN, setupdateN] = useState("");
   const [updateD, setupdateD] = useState("");
   const [updateimg, setupdateimg] = useState("");
+  const [favList, setFavList] = useState([])
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  
 
  
   ////////
-  const id ="Jw8Oq8Bjprk"
+ 
   //--------------------get Regin----------
   useEffect(async () => {
     try {
@@ -56,7 +61,47 @@ export default function Region({ token }) {
     } catch (error) {
       console.log(error);
     }
+
+
+    try {
+      const resultt = await axios.get("http://localhost:5000/like", {
+          headers: { authorization: "Bearer " + token },
+        }); 
+        setFavList(resultt.data); 
+        console.log(resultt.data, "all of like");
+    } catch (error) {
+      console.log(error.response.data );
+      console.log(error);
+    }
   }, []);
+
+
+
+  const removFavourites = async (id, i) => {
+    const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
+      headers: { authorization: "Bearer " + token },
+    });
+    console.log(result.data);
+    const copied = [...favList];
+    copied.splice(i, 1);
+    setFavList(copied);
+  };
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
   ///////////////////
   const FuncName = (e) => {
     setName(e.target.value);
@@ -171,7 +216,9 @@ export default function Region({ token }) {
           headers: { authorization: "Bearer " + token },
         }
       );
+      
       console.log(result.data);
+      setFavList(result.data)
     } catch (error) {
       console.log(error.response.data);
     }
@@ -210,11 +257,13 @@ if (selected && types.includes(selected.type)){
 
  
     <div >
-    <iframe  
-    width={1600}
-    height={800}
-    src={`https://www.youtube.com/embed/${id}`}>
-    </iframe>
+    <video 
+        autoPlay muted
+         style={{width:"100%" ,height:"4%"}}
+       >
+      
+       <source   type="video/mp4"/>
+       </video>
     </div>
     <div id="the-line">
     <img id="img-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIHmY6uU3Od46-y61h2zqlv-MHGAQfBDGdhg&usqp=CAU"/>
@@ -229,9 +278,9 @@ if (selected && types.includes(selected.type)){
     <br/>
                    emissions.”
     </p>
-    <h5 id="royle">
+    <h3 id="royle">
     His Royal Highness
-    </h5>
+    </h3>
     <h3 id="Crown">
     Mohammed bin Salman, Crown Prince and Chairman of the NEOM Company Board of Directors
     </h3>
@@ -252,17 +301,31 @@ if (selected && types.includes(selected.type)){
         <br />
         
         {Regions.map((element, i) => {
-          return (
+          let hart= "gray"
+           for (let i = 0; i < favList.length; i++) {
+             if (element._id == favList[i]._id){
+               hart = "red"
+              
+             }
             
+            }
+          return (
+          
             <div key={element._id}>
               <p>name:{element.name}</p>
 
               <img src={element.img} alt=" " />
               <br/>
               <br/>
-              <FavoriteBorderIcon  onClick={() => {  Favorite(element._id); }} > </FavoriteBorderIcon>
+              { hart== "gray" ?
+               <button onClick={() => {  Favorite(element._id); }} > favorite</button> 
+              :
+               <button  onClick={() => {
+                removFavourites(element._id, i);
+              }}>delet</button> 
+            }
               <p> description : {element.description}</p>
-
+             
               <div>
                {adminToggil? 
                 <button onClick={() => { setToggle(true); }} > show{""} </button>:""}
@@ -306,7 +369,7 @@ if (selected && types.includes(selected.type)){
                   ""
                 )}
               </div>
-
+                
               <br />
             </div>
           );
@@ -333,7 +396,7 @@ if (selected && types.includes(selected.type)){
         { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg}/> }
       </div>
         </div>
-        <AddToPhotosIcon id="add" onClick={() => { addRegion(); }} > add</AddToPhotosIcon>
+        <button id="add" onClick={() => { addRegion(); }} > add</button>
          </div>        
 
       </div>:""}

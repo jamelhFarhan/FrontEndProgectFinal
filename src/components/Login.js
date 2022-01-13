@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../style/Login.css"
+// import www from "./video/www.mp4"
 import axios from "axios";
 
 export default function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
  
+
+
+
+
+
+
  
   const history = useHistory();
   const interEmail = (e) => {
@@ -24,19 +31,59 @@ export default function Login({ setToken }) {
       });
       
       setToken(response.data.token);
-      // localStorage.setItem("token", JSON.stringify(response.data.token))
+     
       history.push("/Regionss");
       
     } catch (error) {
       console.log(error);
     }
   };
+
+
+
+
+
+
+
+
   return ( 
+    <>
+
+
+    <video 
+    autoPlay loop muted
+     style={{ position:"fixed" ,
+      width:"100%",
+      left:"0%",
+      top:"0%",
+     
+    objectFit:"cover",
+    transorm:"translate(-50%, -50%)",
+    zIndex:"-1",
+    height:"150%"
+    }}
+   >
+  
+   <source type="video/mp4"/>
+
+
+
+   
+  </video>
+
+
     <div  id="main-conteners">
    
     <div>
-    <h2 id="log">sign in</h2>
-    <label>Email</label>
+    <div id="log">
+    <img id="tt" src="https://yt3.ggpht.com/ytc/AKedOLRZiVaOhiyopxkS1brKSeKMrG9aOxkK020nA1BaSA=s176-c-k-c0x00ffffff-no-rj"  width={130}/>
+    <br/>
+    <br/>
+    
+    <h2 >Welcome to Neom</h2>
+    </div>
+
+    <label id="lable">Email</label>
     <br/>
       <input id="inpu11" onChange={(e) => {interEmail(e); }} placeholder="enter your email"/><br/>
       <label>Password</label>
@@ -47,7 +94,11 @@ export default function Login({ setToken }) {
       <button id="btn1" onClick={() => { enterLogin();}}>
         Login
       </button>
+    
+     
       </div>
     </div>
+   
+    </>
   );
 }
