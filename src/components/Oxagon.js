@@ -1,7 +1,7 @@
 import React from 'react'
 import "../style/Oxagon.css"
 import { useHistory } from "react-router-dom";
-// import ox_Trim from "./video/ox_Trim.mp4"
+ import oxgon from "../video/oxgon.mp4"
 export default function Oxagon({token}) {
     const history = useHistory();
     const invrstment = () => {
@@ -16,7 +16,7 @@ export default function Oxagon({token}) {
       // }}
        >
       
-       <source  type="video/mp4"/>
+       <source src={oxgon} type="video/mp4"/>
        </video>
       
         <div>

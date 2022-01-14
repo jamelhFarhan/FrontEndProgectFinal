@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import axios from "axios";
 import { BsFillHeartFill } from "react-icons/bs";
-//  import ttoo from "./video/ttoo.mp4"
+  import line from "../video/line.mp4"
 import "../style/Region.css"
 
 import ImageSearchIcon from '@material-ui/icons/ImageSearch';
@@ -262,7 +262,7 @@ if (selected && types.includes(selected.type)){
          style={{width:"100%" ,height:"4%"}}
        >
       
-       <source   type="video/mp4"/>
+       <source src={line}   type="video/mp4"/>
        </video>
     </div>
     <div id="the-line">
