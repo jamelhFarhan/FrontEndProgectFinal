@@ -81,8 +81,8 @@ margin-top: 70px;
   cursor: pointer;
 }
 .reg-div-con button:hover{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 90px;
     transform: rotate(0deg)   
 }
 

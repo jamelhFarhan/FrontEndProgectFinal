@@ -21,6 +21,7 @@ useEffect(async () => {
           
         headers: { authorization: "Bearer " + token },
       });
+      console.log(findInvestors);
       setInvestors(findInvestors.data);
       
        console.log(findInvestors.data);
@@ -180,8 +181,32 @@ const FuncName1=(e)=>{
         <button  onClick={()=>{Dashboar()}}>Dashboar</button>
      </div>:""} */}
    
-    <br/>
-    
+    <br/> 
+    <div id="sector">
+    <h6 id="nqta">.</h6>
+   <div id="imation-final">
+   <h2 id="Design">Design and Construction </h2>
+   
+   <br/>
+   <p id="The-design">Be one of the investors in the design, construction and modern destinations in the city of NEOM</p>
+   </div>
+   <div id="gooood">
+   <h2 id="mobil">Mobility</h2>
+   <p>Be one of the investors in the sector of mobility and construction of roads in a modern style in the city of Neom</p><br/>
+   <img id="img-mob" src="https://www.neom.com/content/dam/neom/mvp/technology-and-digital/c49-%E2%80%93-leading-the-world/04.jpg" width={550} height={340}/>
+   </div>
+   <div id="Sports">
+   <h3 id="Sports-div">Sport</h3>
+   <p id="sport-para">Be one of the investors in the sports sectors and establish gyms and digital games in the city of NEOM</p>
+   
+   </div>
+   <div id="Entertainment">
+   <h3 id="enter-tt">Entertainment </h3>
+   <p id="Be-Be-para">Be one of the investors in the sectors of entertainment and establish entertainment resorts, water games and interactive games in the city of NEOM</p> <br/>
+   <img id="img-img-o" src="https://www.neom.com/content/dam/neom/mvp/technology-and-digital/20211028%20CHANGEMAKERS%20EPISODE%202_Eng_no%20subs%20thumbnail.jpg" width={550} height={340} />
+   </div>
+   
+   </div>
         </div>
     )
 }

@@ -7,7 +7,8 @@ import axios from "axios";
 export default function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+ const [masg ,setmasg]=useState(null)
+ const[ pass ,setpass]=useState(null)
 
 
 
@@ -24,6 +25,12 @@ export default function Login({ setToken }) {
   };
 
   const enterLogin = async () => {
+if (!email || !password){
+  setmasg("Please enter all fields")
+} 
+ else if  (password.length  < 6){
+  setpass(" password must be at least 6 ")
+}else
 
     try {
       const response = await axios.post("http://localhost:5000/login", {
@@ -94,7 +101,8 @@ export default function Login({ setToken }) {
       <button id="btn1" onClick={() => { enterLogin();}}>
         Login
       </button>
-    
+    <h4 id="masg">{masg }</h4>
+    <h4 id="pass">{pass}</h4>
      
       </div>
     </div>

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
 import axios from "axios";
-
-  import tursom from "../video/tursom.mp4"
+ import tursom from "../video/tursom.mp4"
 import "../style/Region.css"
-
 import ImageSearchIcon from '@material-ui/icons/ImageSearch';
-
 import ProgressBar from "./ProgressBar"
-import { red } from "@material-ui/core/colors";
+
 export default function Region({ token }) {
   const history = useHistory();
   const [Regions, setRegions] = useState([]);
@@ -21,7 +17,6 @@ export default function Region({ token }) {
   const [updateD, setupdateD] = useState("");
   const [updateimg, setupdateimg] = useState("");
   const [favList, setFavList] = useState([])
- 
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
   const [file, setFile] = useState(null);
@@ -314,10 +309,7 @@ if (selected && types.includes(selected.type)){
       
         <div >
         {Regions.map((element, i) => {
-          {/*let hart= "gray"
-           for (let i = 0; i < favList.length; i++) {
-             if (element._id == favList[i]._id){
-             hart = "red"*/}
+       
                
               console.log(element._id );
              

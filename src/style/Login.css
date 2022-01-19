@@ -69,6 +69,14 @@ color: grey;
  #tt{
    border-radius: 60px;
  }
+ #masg{
+   color: red;
+   margin-left: 70px;
+ }
+ #pass{
+  color: red;
+  margin-left: 50px;  
+ }
 
 @media only screen and (max-width: 768px){
 

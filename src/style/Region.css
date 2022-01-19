@@ -92,7 +92,8 @@ body {
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
-  background-color: rgba(0, 0, 0, 0.13);
+  background-color: green;
+  opacity: 0.9;
 }
 #NEOM-Resorts {
   margin-left: 599px;
@@ -142,7 +143,8 @@ body {
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
-  background-color: rgba(0, 0, 0, 0.13);
+  background-color:rgba(189, 31, 39, 0.781);
+  opacity: 0.9;
 }
 #form-theline {
    display: flex;
@@ -179,7 +181,7 @@ body {
   box-shadow: grey;
 }
 #edetheline {
-  margin-left: 30px;
+  margin-left: -5px;
   width: 85px;
   height: 45px;
   border: none;
@@ -188,10 +190,11 @@ body {
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
-  background-color: rgba(0, 0, 0, 0.13);
+  background-color: green;
+  opacity: 0.9;
 }
 #update-theline {
-  margin-left: 790px;
+  margin-left: 690px;
   margin-bottom: 30px;
   border-radius: 7px;
   width: 100px;
@@ -201,7 +204,8 @@ body {
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
-  background-color: rgba(0, 0, 0, 0.13);
+  background-color: green;
+  opacity: 0.9;
 }
 #fivert {
   margin-left: 1272px;

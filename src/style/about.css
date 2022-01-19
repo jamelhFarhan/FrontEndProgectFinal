@@ -109,7 +109,7 @@ background-image: url("https://www.vision2030.gov.sa/media/4ophlghy/proj-neom_xl
 }
 #finaly-div-about{
     width: 100%;
-    height: 40vh;
+    height: 70vh;
 background-color:rgba(9, 79, 136, 0.87) ;
 
 
@@ -119,7 +119,7 @@ background-color:rgba(9, 79, 136, 0.87) ;
 color:rgba(9, 79, 136, 0.87) ;    
 }
 #Connect{
-    margin-left: 680px;
+    margin-left: 700px;
     margin-top:  60px;
     font-family: sans-serif;
     color: white;
@@ -130,6 +130,7 @@ color:rgba(9, 79, 136, 0.87) ;
  
     display: flex;
 justify-content: center;
+margin-left: -40px;
 
 }
 .guthub{
@@ -142,13 +143,26 @@ justify-content: center;
 }
 
 #final_2020{
-    margin-left: 700px;
+    margin-left: 720px;
    
     font-family: sans-serif;
     color: white;
     font-style: italic;  
 }
-
+#folow-neom{
+    margin-left: 700px;
+    margin-top: 110px;
+    color: white;
+    font-style: italic;  
+    font-family: sans-serif;
+}
+#jamelh-email{
+    margin-left: -100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}#tel{
+    margin-left: -50px;   
+}
 
 @media only screen and (max-width: 768px){
     #mmmm-about{

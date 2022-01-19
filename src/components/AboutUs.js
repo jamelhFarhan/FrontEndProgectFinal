@@ -75,8 +75,11 @@ export default function AboutUs() {
 
         <div id='finaly-div-about'>
         <h6 id='qq'>.</h6>
-        <h3 id='Connect'>Connect with us</h3>
-        Follow NEOM
+        <h3 id='Connect'>Connect with us <br/>
+        <p id='jamelh-email'>Email: jamailafarhan85@gamil.com</p>
+        <p id='tel'>Tel : +966558740175</p>
+        </h3>
+        <h3 id='folow-neom'>Follow NEOM</h3>
          <ul id='mainContener-ul'>
          
        

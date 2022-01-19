@@ -7,7 +7,7 @@
  
 width: 90%;
 height: 100px;
-color:rgba(0, 0, 0, 0.863) ;
+
 font-size: larger;
 font-family: sans-serif;
 text-align: center;
@@ -27,7 +27,7 @@ font-style: italic;
 
 .th{
     margin: 50px; 
-    background-color: rgba(0, 0, 0, 0.13) ;
+    background-color: rgba(30, 30, 63, 0.288);
     position: sticky;
     top: 0;
     z-index: 999;
