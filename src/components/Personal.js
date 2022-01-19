@@ -37,7 +37,7 @@ export default function Personal({ token }) {
   
       {Like.map((elem, i) => {
         return (
-          <div>
+          <div id="dev-dev-personal">
             <p  id="name-personal">Name:  {elem.name} </p>
 
             <img id="img-personal" src={elem.img} alt="no" />

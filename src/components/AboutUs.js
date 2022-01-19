@@ -7,10 +7,11 @@ import React from 'react'
  import insta from "./mdea/insta.png"
 
 import "../style/about.css";
+import { id } from 'date-fns/locale'
 
 export default function AboutUs() {
     return (
-        <>
+        <div id='main-div-about'>
         <div id='mmmm-about'>
   
         </div>
@@ -75,7 +76,7 @@ export default function AboutUs() {
         <div id='finaly-div-about'>
         <h6 id='qq'>.</h6>
         <h3 id='Connect'>Connect with us</h3>
-    
+        Follow NEOM
          <ul id='mainContener-ul'>
          
        
@@ -162,6 +163,6 @@ alt="instagram"
         <h5 id='final_2020'> @ 2021 NEOM</h5>
         </div>
         
-        </>
+        </div>
     )
 }

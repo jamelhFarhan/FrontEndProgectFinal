@@ -8,9 +8,9 @@ export default function Oxagon({token}) {
       history.push("/BeAnAnvestor");
     };
     return (
-        <div>
+        <div id='main-dev-oxagon-media'>
         <video 
-        autoPlay muted 
+        autoPlay  
       // style={{ position: "fixed",
       //   top: "0", higth:"100"
       // }}
@@ -19,7 +19,7 @@ export default function Oxagon({token}) {
        <source src={oxgon} type="video/mp4"/>
        </video>
       
-        <div>
+        <div  id='contener-oxgon-main'>
         <p  id='pargraph-x'>
         LIKE NOWHERE ELSE ON EARTH, THIS PIONEERING <br/>
         <br/>
@@ -40,7 +40,7 @@ export default function Oxagon({token}) {
     
     </p>
         
-        </div>
+       
         <div id='oxagon'>
 
 
@@ -71,14 +71,16 @@ export default function Oxagon({token}) {
      <h2 id='human-pro'>HUMAN PROGRESS</h2>
      <div id='div-oxgon-for'>
      <span>
+    
      NEOM IS AN ACCELERATOR OF HUMAN PROGRESS <br/> THAT WILL EMBODY THE FUTURE OF INNOVATION <br/> IN BUSINESS, LIVABILITY AND  SUSTAINABILITY.
+   
      </span>
      <span>
      NEOM OFFERS MANY UNIQUE INVESTMENT <br/> OPPORTUNITIES OF DIFFERENT SIZES ACROSS <br/> MULTIPLE INDUSTRIES.
      </span>
      </div>
      
-     <button id='mybtn1' onClick={() => { (invrstment())}} > Invest with <br/>NEOM</button>
+     <button id='mybtn1' onClick={() => { (invrstment())}} > Invest<br/> with <br/>NEOM</button>
      
      
     
@@ -106,7 +108,7 @@ export default function Oxagon({token}) {
 
    </div>
      </div>
-       
+     </div>
         </div>
     )
 }

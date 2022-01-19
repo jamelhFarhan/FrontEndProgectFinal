@@ -44,64 +44,27 @@ li {
 
 
 
-@media screen and (max-width:769)and(max-width:1024px){
-  nav-linkes{
-    position: absolute;
-  right: 0px;
-  height: 22vh;
-  top: 8vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-width: 50%;
-transform: translateX(80%);
 
-
+@media only screen and (max-width: 768px){
+  nav{
+    width: 388px;
+    
   }
- }
+  .link {
+    text-decoration: none;
 
- @media screen and (max-width:401)and (max-width:768px) {
-  body{
-    overflow-x: hidden;
- 
-  }
-  nav-linkes{
-  position: absolute;
-  right: 0px;
-  height: 14vh;
-  top: 8vh;
+   font-size: xx-small;
   
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-width: 50%;
-transform: translateX(100%);
-
   }
-
-  
-
+  li {
+   
+     padding: 75px; 
+    
+  }
 }
 
-@media screen and (max-width:400px) {
 
-
-  nav-linkes{
-    position: absolute;
-    right: 0px;
-    height: 16vh;
-    top: 8vh;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  width: 50%;
-  transform: translateX(100%);
-  
-    }
-
-
-}  
+     
 
 
 

@@ -121,6 +121,12 @@ font-family: sans-serif;
   color: white;
   cursor: pointer;
   opacity: 0.9;
+  
+}
+#dash-b0td:hover{
+width: 200px;
+height: 200px;
+transform: rotate(20deg);
 }
 #div-to-gle{
     width: 100%;
@@ -128,6 +134,43 @@ font-family: sans-serif;
     margin-top: -60px;
      background-color:rgb(255, 255, 255); 
 
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+  #pic-ground{
+    width: 350px;
+  }  
+  #div-f0rm{
+    width: 320px;
+   
+    margin-left: 68px;
+    margin-top: 290px;
+  }
+  #input-invrsty0{
+width: 170px;
+margin-left: 115px;
+
+  }
+  #all-item{
+    width: 120px;
+    height: 180px;
+    margin-left: 30px;
+  }
+#dash-b0td{
+  width: 130px;
+  margin-left: 155px;
+}
+#form-investor{
+  display: grid;
+  grid-template-columns: 1fr 1fr   ;  
+  gap: 8px;
+}
 }
 
 

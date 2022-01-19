@@ -55,6 +55,7 @@ font-style: italic;
     border-radius: 10px;
     border:none;
   font-size: large;
+  font-style: italic;
   font-family: sans-serif;
   color: white;
   cursor: pointer;
@@ -117,3 +118,42 @@ background-color: rgba(59, 56, 56, 0.068) ;
       
 }
 
+
+@media only screen and (max-width: 768px){
+.main-div-users{
+    width: 650px;
+    margin-left: 10px;  
+  
+} 
+.table{
+   width: 230px; 
+   margin-left: -20px;
+  
+} .th{
+
+font-size: 20px;
+}
+#name-user{
+ font-size: 15px;
+} 
+#price-user{
+  font-size: 15px; 
+}
+#email-user{
+  font-size: 15px;  
+}
+#phone-user{
+  font-size: 15px;  
+}
+#delet-h-j{
+  width: 60px;
+  font-size: 15px;
+}
+#butn-user-edit{
+  width: 60px; 
+  font-size: 15px;
+}
+#butn-amount{
+ width: 100px; 
+}
+}

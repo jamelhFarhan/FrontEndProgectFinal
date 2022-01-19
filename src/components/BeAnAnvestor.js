@@ -109,31 +109,10 @@ const FuncName1=(e)=>{
         
        {userAdmin ? "" : ""}
      
-        <div>
-
-        {/*<video 
-        autoPlay  loop muted
-         style={{ position:"fixed" ,
-          width:"100%",
-          left:"0%",
-          top:"0%",
-         
-        objectFit:"cover",
-        transorm:"translate(-50%, -50%)",
-        zIndex:"-1",
-        height:"95%"
-        ,
-        }}
-       >
-      
-       <source src={xxvv} type="video/mp4"/>
-  
-  
-  
        
-      </video>  */}
+
        <div id="pic-ground" >
-     {/* <button  id="invest-toggle" onClick={()=>{settooglee(!tooglee) }}>be an investor</button> <br/> */}
+     
      
      <h6>.</h6> <br/>
               <form id="div-f0rm">
@@ -193,7 +172,7 @@ const FuncName1=(e)=>{
       
     
       
-        </div>
+       
 
       </div>
       <br/>

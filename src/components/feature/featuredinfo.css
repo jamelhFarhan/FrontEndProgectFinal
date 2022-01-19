@@ -42,3 +42,20 @@
     font-size: 15px;
     border: gray
 }
+
+@media only screen and (max-width: 768px){
+.featured{
+   width: 250px;
+
+    } 
+    .featuredItem  {
+      width: 80px;
+      margin-left: -20;
+    }
+    .featuredTitle{
+        font-size: 10px;
+    }
+    .featuredMony{
+        font-size: 10px;   
+    }
+}

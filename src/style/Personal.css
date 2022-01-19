@@ -30,17 +30,46 @@
 #desc-personal{
   margin-bottom: 20px;
   margin-left: 150px;
-  letter-spacing:2px ;
-  line-height: 27px;
+  color: rgba(27, 24, 24, 0.904);
+   
+    font-size: x-large;
+    
+    font-style: italic;
+  line-height: 30px;
 }
 #butn-brsonal{
-  width: 85px;
+  width: 95px;
   height: 45px;
-  border-radius: 50px;
   margin-left: 300px;
   margin-bottom: 50px;
   border: none;
-  background-color: rgba(255, 0, 0, 0.521);
-  color: gray;
-  font-family: sans-serif;
+  border-radius: 7px;
+     color: rgba(27, 24, 24, 0.904);
+     font-style: italic;
+     font-size: large;
+     font-family: sans-serif;
+ background-color: rgba(128, 128, 128, 0.452);
+}
+
+@media only screen and (max-width: 768px){
+#desc-personal {
+    margin-left: 20px;
+    width: 363px;
+}
+ #img-personal{
+  width: 180px;
+  height: 220px;
+  /* margin-bottom: 30px; */
+  margin-left: 100px;
+  margin-top: -31px;
+ }
+
+ #name-personal{
+
+  margin-left: 122px;
+  margin-top: -173px;
+
+
+ } 
+
 }

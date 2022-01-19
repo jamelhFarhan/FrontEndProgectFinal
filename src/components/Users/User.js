@@ -5,7 +5,7 @@ export default function User({ token }) {
   const [dashborduser, setdashborduser] = useState([]);
 
   const [priceUpdate, setpriceUpdate] = useState("");
-  // const [toggles,settoggles]=useState(false)
+  
   useEffect(async () => {
     try {
       console.log(token);
@@ -92,7 +92,7 @@ export default function User({ token }) {
               <td id="email-user" className="td">{elem.email}</td>
               <td id="phone-user" className="td">{elem.phoneNumber}</td>
             
-            {/*<button id="butn-user-edit"  onClick={()=>{settoggles(!toggles) }}> Edit</button>*/}
+             
 
               
             <button id="delet-h-j" onClick={() => { deleteInvestors(elem._id, i); }}>{" "} Delete </button>

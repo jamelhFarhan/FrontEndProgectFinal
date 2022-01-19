@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 import axios from "axios";
-import { BsFillHeartFill } from "react-icons/bs";
-  import line from "../video/line.mp4"
+
+  import tursom from "../video/tursom.mp4"
 import "../style/Region.css"
 
 import ImageSearchIcon from '@material-ui/icons/ImageSearch';
@@ -21,6 +21,7 @@ export default function Region({ token }) {
   const [updateD, setupdateD] = useState("");
   const [updateimg, setupdateimg] = useState("");
   const [favList, setFavList] = useState([])
+ 
   const [toggle, setToggle] = useState(false);
   const [adminToggil, setAdminToggil] = useState(false);
   const [file, setFile] = useState(null);
@@ -62,30 +63,33 @@ export default function Region({ token }) {
       console.log(error);
     }
 
-
+ if(token){
     try {
       const resultt = await axios.get("http://localhost:5000/like", {
           headers: { authorization: "Bearer " + token },
         }); 
+        console.log(resultt.data,"likessss");
         setFavList(resultt.data); 
         console.log(resultt.data, "all of like");
     } catch (error) {
       console.log(error.response.data );
       console.log(error);
     }
+  }
   }, []);
 
 
 
-  const removFavourites = async (id, i) => {
-    const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
-      headers: { authorization: "Bearer " + token },
-    });
-    console.log(result.data);
-    const copied = [...favList];
-    copied.splice(i, 1);
-    setFavList(copied);
-  };
+  // const removFavourites = async (id, i) => {
+  //   const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
+  //     headers: { authorization: "Bearer " + token },
+  //   });
+  
+  //   console.log(result.data);
+  //    const copied = [...favList];
+  //    copied.splice(i, 1);
+  //    setFavList(copied);
+  // };
 
   
   
@@ -158,7 +162,8 @@ export default function Region({ token }) {
     }
   };
   ////////////update/////////
-  const UpDateRegion = async (id, i) => {
+  const UpDateRegion = async (id, i ,e) => {
+    e.preventDefault();
     try {
       const Modification = await axios.put(
         `http://localhost:5000/updateRegion/${id}`,
@@ -206,19 +211,19 @@ export default function Region({ token }) {
     setRegions(FuncSearsh);
     return FuncSearsh;
   };
-
+/////////////////////////////////
   const Favorite = async (id) => {
     try {
-      const result = await axios.post(
-        `http://localhost:5000/like/${id}`,
-        {},
+      const result = await axios.post(`http://localhost:5000/like/${id}`,
+      { },
         {
           headers: { authorization: "Bearer " + token },
         }
       );
       
       console.log(result.data);
-      setFavList(result.data)
+       setFavList(result.data)
+  
     } catch (error) {
       console.log(error.response.data);
     }
@@ -258,11 +263,11 @@ if (selected && types.includes(selected.type)){
  
     <div >
     <video 
-        autoPlay muted
+        autoPlay 
          style={{width:"100%" ,height:"4%"}}
        >
       
-       <source src={line}   type="video/mp4"/>
+       <source src={tursom}   type="video/mp4"/>
        </video>
     </div>
     <div id="the-line">
@@ -278,88 +283,88 @@ if (selected && types.includes(selected.type)){
     <br/>
                    emissions.”
     </p>
-    <h3 id="royle">
+    {/*<h3 id="royle">
     His Royal Highness
     </h3>
     <h3 id="Crown">
     Mohammed bin Salman, Crown Prince and Chairman of the NEOM Company Board of Directors
-    </h3>
+  </h3>*/}
     
     
     </div>
+
+
+   
        {adminToggil ? "" : ""}
+<br/>
+
+    
+
+
      <div>
+     <h1 id="NEOM-Resorts">NEOM Resorts</h1>
      <input id="cearsh" placeholder="search" onChange={(e) => { FiandRegin(e); }}/>
      <ImageSearchIcon id="search-main" onClick={() => { FuncSearsh(); }} > {" "} search.{" "}</ImageSearchIcon>
      </div>
       
-        <div>
-
-        </div>
-
-        <br />
-        <br />
         
+
+        <br />
+        <br />
+      
+        <div >
         {Regions.map((element, i) => {
-          let hart= "green"
+          {/*let hart= "gray"
            for (let i = 0; i < favList.length; i++) {
              if (element._id == favList[i]._id){
-               hart = "red"
-              
-             }
+             hart = "red"*/}
+               
+              console.log(element._id );
+             
+             
             
-            }
+            
           return (
           
-            <div key={element._id}>
-              <p>name:{element.name}</p>
+            <div id="" key={element._id}>
+              <p id="name-theline">name:{element.name}</p>
 
-              <img src={element.img} alt=" " />
-              <br/>
-              <br/>
-              { hart== "green" ?
-               <button onClick={() => {  Favorite(element._id); }}  style={{color:"red"}}>add</button> 
-              :
-               <button  onClick={() => {
-                removFavourites(element._id, i);
-              }}> delet</button> 
+              <img id="img-regoin" src={element.img} alt=" " />
               
-            }
-            
-              <p> description : {element.description}</p>
+              <p id="desc-theline"> description : <br/>{element.description}</p>
+              <br/>
+              <br/>
              
+               <button id="fivert" onClick={() => {  Favorite(element._id); }} >❤</button> 
+                         
               <div>
-               {adminToggil? 
-                <button onClick={() => { setToggle(true); }} > show{""} </button>:""}
+            
+              
+                
                 {adminToggil === true ? (
                   <div>
-                    <button
+                    <button id="delet-theline"
                       onClick={() => {
                         deleteRegions(element._id, i);
                       }}
                     >
                       {" "}
-                      delete{" "}
+                      Delete {" "}
                     </button> 
+                     <br/>
 
-                     <button  onClick={() => { UpDateRegion(element._id, i); }} > {" "}submet{" "}  </button>
 
                     <div>
-                      <button
-                        onClick={() => {
-                          setToggle(!toggle);
-                        }}
-                      >
-                        {" "}
-                        update{" "}
-                      </button>{" "}
+  <button  id="update-theline" onClick={() => { setToggle(!toggle); }}  > {" "}UpDate{" "}</button>
                       {toggle === true ? (
-                        <form>
-                          <input  onChange={(e) => { UpDateName(e); }} placeholder="updateName" value={updateN}/>
+                        <form id="form-theline">
+                          <input id="input-theline-up" onChange={(e) => { UpDateName(e); }} placeholder="updateName" value={updateN}/>
                           <br />
-                          <input onChange={(e) => {UpDateDesc(e);}} placeholder="updateDescription" value={updateD} />
+                          <input id="input-theline-updes" onChange={(e) => {UpDateDesc(e);}} placeholder="updateDescription" value={updateD} />
                           <br />
-                          <input onChange={(e) => { UpDateImg(e); }} placeholder="updateImg"  value={updateimg}/>
+                          <input  id="input-theline-img" onChange={(e) => { UpDateImg(e); }} placeholder="updateImg"  value={updateimg}/><br/>
+                          <br/>
+                          <button id="edetheline"  onClick={(e) => { UpDateRegion(element._id, i,e); }} > {" "}save{" "}  </button>
                           <br />
                         </form>
                       ) : (
@@ -371,12 +376,13 @@ if (selected && types.includes(selected.type)){
                   ""
                 )}
               </div>
-                
+                <hr/>
               <br />
             </div>
           );
         })}
-     
+        </div>
+        
     {adminToggil? <div>
       <div className="insertadmin">
       <label className="lable" for="Name">Name</label>

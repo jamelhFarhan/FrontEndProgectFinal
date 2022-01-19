@@ -88,7 +88,7 @@ export default function SignUp() {
 <br/>
 <br/>
       
-      <form >
+      <form  id="form">
       <label>Name</label><br/>
         <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"  id="input1"/>
        <br/>

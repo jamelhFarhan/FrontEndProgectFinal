@@ -50,4 +50,15 @@
     border-radius: 50px;
     cursor: pointer;
 } 
+
+
+
+@media only screen and (max-width: 768px){
+.topbar{
+    width: 90px;
+} 
+.topbarWrapper{
+    width:470px ;
+}   
+}
   

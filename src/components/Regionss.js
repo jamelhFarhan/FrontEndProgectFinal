@@ -40,7 +40,7 @@ export default function Regionss() {
     <div className='images'>
      <div className='imgee-container'>
      <p className="id">A revolution in urban and tourist life</p>
-     <img  src='https://wired.me/wp-content/uploads/2021/01/Saudi-Arabia-the-line-neom.jpg'/>
+     <img className="img1" src='https://wired.me/wp-content/uploads/2021/01/Saudi-Arabia-the-line-neom.jpg'/>
    
      <div className="reg-div-con">
      <button id="buttonOne"
@@ -50,7 +50,7 @@ export default function Regionss() {
      
      <div className='imgee-container'>
      <p className="id">An open city for industry and investment</p>
-     <img  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qWLKFJEWFJbKle4nily4juSU5PHRNu9enA&usqp=CAU'/>
+     <img  className="img2" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0qWLKFJEWFJbKle4nily4juSU5PHRNu9enA&usqp=CAU'/>
      <div className="reg-div-con">
      <button id="buttonOne"
      onClick={() => { Oxagons()}} > OXAGON

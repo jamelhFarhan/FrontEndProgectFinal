@@ -16,15 +16,10 @@ import User from "./components/Users/User";
 import { Route } from "react-router";
 export default function App() {
   const [token, setToken] = useState("");
-  // const [ usurSigin ,setusurSigin]=useState(true);
+ 
   
     
 
-  // useEffect(() => {
-  //   if(!token && localStorage.getItem("token") !== ""){
-  //     setToken(localStorage.getItem("token"))
-  //   }
-  // }, [])
 
 
   
