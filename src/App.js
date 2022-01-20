@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./style/app.css"
+
+import "./style/app.css";
+
 import NavBar from "./components/Navbar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -10,11 +12,11 @@ import Investors from "./components/Investors";
 import Oxagon from "./components/Oxagon";
 import AboutUs from "./components/AboutUs";
  import BeAnAnvestor from "./components/BeAnAnvestor";
- 
 import User from "./components/Users/User";
-
 import { Route } from "react-router";
+require("dotenv").config();
 export default function App() {
+  console.log(process.env.REACT_APP_BACKEND_URL,"backend" );
   const [token, setToken] = useState("");
  
   

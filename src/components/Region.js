@@ -30,7 +30,7 @@ export default function Region({ token }) {
   useEffect(async () => {
     try {
       // console.log(token, "token here");
-      const findRegin = await axios.get("http://localhost:5000/getRegions", {
+      const findRegin = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getRegions`, {
         headers: { authorization: "Bearer " + token },
       });
       //  console.log(findRegin);
@@ -46,7 +46,7 @@ export default function Region({ token }) {
     }
 
     try {
-      const Admaien = await axios.get("http://localhost:5000/getUser", {
+      const Admaien = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser`, {
         headers: { authorization: "Bearer " + token },
       });
 
@@ -60,7 +60,7 @@ export default function Region({ token }) {
 
  if(token){
     try {
-      const resultt = await axios.get("http://localhost:5000/like", {
+      const resultt = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/like`, {
           headers: { authorization: "Bearer " + token },
         }); 
         console.log(resultt.data,"likessss");
@@ -76,7 +76,7 @@ export default function Region({ token }) {
 
 
   // const removFavourites = async (id, i) => {
-  //   const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
+  //   const result = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/unlike/${id}`, {
   //     headers: { authorization: "Bearer " + token },
   //   });
   
@@ -115,7 +115,7 @@ export default function Region({ token }) {
   const addRegion = async () => {
     try {
       const result = await axios.post(
-        "http://localhost:5000/addRegion",
+        `${process.env.REACT_APP_BACKEND_URL}/addRegion`,
         {
           name: name,
           description: description,
@@ -142,7 +142,7 @@ export default function Region({ token }) {
   const deleteRegions = async (id, i) => {
     try {
       const severes = await axios.delete(
-        `http://localhost:5000/deletRegion/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/deletRegion/${id}`,
         {
           headers: { authorization: "Bearer " + token },
         }
@@ -161,7 +161,7 @@ export default function Region({ token }) {
     e.preventDefault();
     try {
       const Modification = await axios.put(
-        `http://localhost:5000/updateRegion/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateRegion/${id}`,
         {
           name: updateN,
           description: updateD,
@@ -209,7 +209,7 @@ export default function Region({ token }) {
 /////////////////////////////////
   const Favorite = async (id) => {
     try {
-      const result = await axios.post(`http://localhost:5000/like/${id}`,
+      const result = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/like/${id}`,
       { },
         {
           headers: { authorization: "Bearer " + token },
@@ -392,8 +392,8 @@ if (selected && types.includes(selected.type)){
       </label>
       <div className="output">
         { error && <div className="error">{ error }</div>}
-        { file && <div>{ file.name }</div> }
-        { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg}/> }
+        { file && <div >{ file.name }</div>}
+        { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg} /> }
       </div>
         </div>
         <button id="add" onClick={() => { addRegion(); }} > add</button>

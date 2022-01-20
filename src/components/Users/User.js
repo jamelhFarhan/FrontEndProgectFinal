@@ -10,7 +10,7 @@ export default function User({ token }) {
     try {
       console.log(token);
       const dashbordadmin2 = await axios.get(
-        "http://localhost:5000/getInvestor",
+        ~`${process.env.REACT_APP_BACKEND_URL}/getInvestor`,
         {
           headers: { authorization: "Bearer " + token },
         }
@@ -24,7 +24,7 @@ export default function User({ token }) {
   const deleteInvestors = async (id, i) => {
     try {
       const newwww = await axios.delete(
-        `http://localhost:5000/deletInvestors/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/deletInvestors/${id}`,
         {
           headers: { authorization: "Bearer " + token },
         }
@@ -44,7 +44,7 @@ export default function User({ token }) {
     console.log("hhh");
     try {
       const datainvestor = await axios.put(
-        `http://localhost:5000/updateInvestors/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/updateInvestors/${id}`,
         {
           price: priceUpdate,
         },

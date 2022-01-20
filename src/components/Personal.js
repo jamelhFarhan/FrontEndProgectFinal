@@ -10,7 +10,7 @@ export default function Personal({ token }) {
   useEffect(async () => {
     try {
       if (token) {
-        const result = await axios.get("http://localhost:5000/like", {
+        const result = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/like`, {
           headers: { authorization: "Bearer " + token },
         });
         setLike(result.data);
@@ -23,7 +23,7 @@ export default function Personal({ token }) {
   }, []);
 
   const removFavourites = async (id, i) => {
-    const result = await axios.delete(`http://localhost:5000/unlike/${id}`, {
+    const result = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/unlike/${id}`, {
       headers: { authorization: "Bearer " + token },
     });
     console.log(result.data);

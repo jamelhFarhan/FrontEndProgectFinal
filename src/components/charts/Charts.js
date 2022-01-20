@@ -14,7 +14,7 @@ export default function Charts({token}) {
   useEffect(async()=>{
 try {
 
- const datauser = await axios.get("http://localhost:5000/userdashbord",{
+ const datauser = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/userdashbord`,{
   headers: { authorization: "Bearer " + token },
   }) 
   setUser(datauser.data);

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function UploddForm({token}) {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
-
+import "../style/app.css"
 
     const types = ['image/png', 'image/jpeg']; 
 

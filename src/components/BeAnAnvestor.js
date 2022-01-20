@@ -17,7 +17,7 @@ const [price, setprice] = useState("");
 useEffect(async () => {
     try {
       console.log(token);
-      const findInvestors = await axios.get("http://localhost:5000/getInvestor", {
+      const findInvestors = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getInvestor`, {
           
         headers: { authorization: "Bearer " + token },
       });
@@ -29,7 +29,7 @@ useEffect(async () => {
       console.log("errrr inv");
     }
 try {
-  const AdminI =await axios.get("http://localhost:5000/getDamin",{
+  const AdminI =await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getDamin`,{
     headers: { authorization: "Bearer " + token },
   })
   if (AdminI.data.Admin === true) {
@@ -48,7 +48,7 @@ try {
   ///////////////////
   const addInvestors = async () => {
     try {
-      const result1 = await axios.post("http://localhost:5000/addInvestors",
+      const result1 = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/addInvestors`,
         {
             name: name,
             email : email,

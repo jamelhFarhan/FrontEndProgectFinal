@@ -34,7 +34,7 @@ export default function SignUp() {
     });
 
     try {
-      const response = await axios.post("http://localhost:5000/signUp", {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signUp`, {
         name: name,
         email: email,
         password: password,
