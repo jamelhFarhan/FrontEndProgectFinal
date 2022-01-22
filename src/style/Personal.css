@@ -38,23 +38,30 @@
   line-height: 30px;
 }
 #butn-brsonal{
-  width: 95px;
-  height: 45px;
+  width: 150px;
+  height: 60px;
   margin-left: 300px;
   margin-bottom: 50px;
   border: none;
-  border-radius: 7px;
-     color: rgba(27, 24, 24, 0.904);
+  
+     color: white;
      font-style: italic;
      font-size: large;
      font-family: sans-serif;
- background-color: rgba(128, 128, 128, 0.452);
+     background-color:rgba(189, 31, 39, 0.781);
+     opacity: 0.9;
+     box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+     border-top-left-radius: 50px;
+     border-bottom-right-radius: 50px ;
+     cursor: not-allowed;
+
 }
 
 @media only screen and (max-width: 768px){
 #desc-personal {
-    margin-left: 20px;
+    /* margin-left: 10px; */
     width: 363px;
+    margin-left: 2px;
 }
  #img-personal{
   width: 180px;
@@ -71,5 +78,12 @@
 
 
  } 
-
+ #butn-brsonal{
+   margin: 10px;
+   margin-bottom: 220px;
+ }
+ #imgper{
+  display: grid;
+  grid-template-columns:   1fr ;   
+ }
 }

@@ -82,18 +82,22 @@ body {
   margin-top: 15px;
 }
 #add {
-  width: 100px;
-  height: 45px;
+  width: 150px;
+  height: 60px;
   margin-top: 10px;
   margin-left: 110px;
   border: none;
-  border-radius: 7px;
-  color: rgba(27, 24, 24, 0.904);
+  
+  color: white;
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
   background-color: green;
   opacity: 0.9;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #NEOM-Resorts {
   margin-left: 599px;
@@ -134,17 +138,25 @@ body {
 }
 #delet-theline {
   margin-left: 1280px;
-  width: 85px;
-  height: 45px;
+  width: 150px;
+  height: 60px;
   margin-bottom: -130px;
   border: none;
-  border-radius: 7px;
-  color: rgba(27, 24, 24, 0.904);
+  /* border-radius: 7px; */
+  /* color: rgba(27, 24, 24, 0.904); */
   font-style: italic;
+  color: gray;
   font-size: large;
   font-family: sans-serif;
-  background-color:rgba(189, 31, 39, 0.781);
+  /* background-color:rgba(189, 31, 39, 0.781); */
   opacity: 0.9;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
+  cursor: not-allowed;
+}
+#delet-theline:hover{
+  background-color:rgba(189, 31, 39, 0.781) 
 }
 #form-theline {
    display: flex;
@@ -182,38 +194,56 @@ body {
 }
 #edetheline {
   margin-left: -5px;
-  width: 85px;
-  height: 45px;
+  width: 150px;
+  height: 65px;
   border: none;
-  border-radius: 7px;
-  color: rgba(27, 24, 24, 0.904);
+  color: white;
+  /* border-radius: 7px; */
+  /* color: rgba(27, 24, 24, 0.904); */
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
   background-color: green;
   opacity: 0.9;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
+  cursor: pointer;
 }
 #update-theline {
   margin-left: 690px;
   margin-bottom: 30px;
   border-radius: 7px;
-  width: 100px;
-  height: 45px;
+  width: 150px;
+  height: 60px;
   border: none;
-  color: rgba(27, 24, 24, 0.904);
+  color: white;
   font-style: italic;
   font-size: large;
   font-family: sans-serif;
   background-color: green;
   opacity: 0.9;
+
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
+  cursor: pointer;
+
 }
 #fivert {
   margin-left: 1272px;
-  border-radius: 7px;
-  width: 90px;
-  height: 45px;
+color: gray;
+font-family: sans-serif;
+font-style: italic;
+font-size: large;
+  width: 150px;
+  height: 60px;
   border: none;
   margin-bottom: 10px;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
+  cursor: progress;
 }
 #fivert:hover{
   background-color: red;
@@ -223,8 +253,9 @@ video {
   width: 100%;
   height: auto;
 }
-
-
+#rrredd{
+color:grey;
+}
 
 
 .output{
@@ -235,10 +266,10 @@ video {
   color: var(--error);
 }
 
-label:hover{
+/* label:hover{
   background: var(--primary);
   color: white;
-}
+} */
 @media only screen and (max-width: 768px){
 
 #img-logo{

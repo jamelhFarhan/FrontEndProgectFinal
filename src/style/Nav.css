@@ -20,7 +20,7 @@ nav{
     top: 0;
    
     z-index: 999;
-    background-color: rgba(68, 68, 99, 0.13);
+  background-color: rgba(0, 0, 0, 0.178);
   
 } 
 
@@ -45,28 +45,30 @@ li {
   
 }
 
-
+.link:hover{
+  color: gray; 
+}
 
 
 @media only screen and (max-width: 768px){
   nav{
-    width: 388px;
-    
+    width: 398px;
+ 
   }
   .link {
     text-decoration: none;
 
-   font-size: xx-small;
+   font-size: 10px;
   
   }
   .link:hover{
     background-color: rgb(177, 177, 219); 
   }
-  li {
+  /* li {
+
    
-     padding: 75px; 
     
-  }
+  } */
 }
 
 

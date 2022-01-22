@@ -8,7 +8,16 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [Identity ,setIdentity]=useState("");
- 
+
+const[all, setall]=useState(null)
+  const[ errname ,seterrname]=useState(null)
+  const[ errIdentity ,seterrIdentity]=useState(null)
+  const[ errpassword ,seterrpassword]=useState(null)
+
+
+
+
+  
   const history = useHistory();
   const changeName = (e) => {
     setName(e.target.value);
@@ -26,13 +35,20 @@ export default function SignUp() {
 
   const addUser = async (e) => {
     e.preventDefault();
-    console.log({
-      name: name,
-      email: email,
-      password: password,
-      Identity:Identity,
-    });
-
+   
+    if (!name ||!email || !password||!Identity){
+     
+      setall("Please enter all fields")
+    }
+    if(name.length <3){
+      seterrname("name must be at least 3 characters")
+    }
+    if(password.length  < 6 ){
+      seterrpassword(" password must be at least 6 characters")
+    }
+    if(Identity.length <10){
+      seterrIdentity("National ID  must be at least 6 characters")
+    }
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signUp`, {
         name: name,
@@ -91,18 +107,24 @@ export default function SignUp() {
       <form  id="form">
       <label>Name</label><br/>
         <input onChange={(e) => {  changeName(e);}} placeholder="enter youe name"  id="input1"/>
+        <h6 className="massgeerr">{errname}</h6>
        <br/>
          <label>Email</label><br/>
         <input onChange={(e) => {changeEmail(e);}} placeholder="enter your email" id="input2"/>
         <br/>
         <label>Password</label><br/>
         <input onChange={(e) => { changePassword(e); }} type="password" placeholder="enter your password" id="input3"/>
+        <h6 className="massgeerr">{errpassword}</h6>
         <br/>
-        <label>Identity</label><br/>
-        <input onChange={(e)=>{changeIdentity(e); }} id="input3"  placeholder="enter your Identity"></input><br/>
+        <label>National ID</label><br/>
+        <input onChange={(e)=>{changeIdentity(e); }} id="input3"  placeholder="enter your National ID"></input><br/>
+        <h6  className="massgeerr">{errIdentity}</h6>
+        <h6 className="massgeer">{all}</h6>
         <button onClick={(e) => {addUser(e); }}  id="btn">register</button>
+      
         </form>
       </div>
+     
     </div>
     </>
   );

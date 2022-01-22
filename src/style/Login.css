@@ -33,6 +33,7 @@
   padding-right: 12px; 
   height: 45px;
   color: grey;
+  color: grey;
   border-top: 2px gray; 
   border-left: 2px gray;
   border-right: 2px gray;
@@ -53,18 +54,22 @@ color: grey;
   #btn1{
     width: 60%;
     margin-left: 55px;
-    height: 50px;
+    height: 60px;
     padding: 10px;
     border: none;
     background-color: rgb(202, 202, 224); 
-    border-radius: 20px;
-    color: gray;
+    /* border-radius: 20px; */
+    color: white;
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: 15px;
     cursor: pointer;
     background:  green;
-}   
+    box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px ;
+  }
+ 
 
  #tt{
    border-radius: 60px;

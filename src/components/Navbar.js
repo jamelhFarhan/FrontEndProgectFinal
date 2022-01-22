@@ -15,7 +15,7 @@ export default function Navbar({ token, setToken }) {
    <li>
         <Link className="link" to="/Regionss">
       
-        REGIONSS
+        REGIONS
         </Link>
    </li>
 
@@ -58,13 +58,14 @@ export default function Navbar({ token, setToken }) {
           <li>
             <Link className="link" to="/login">
              
-              LOG IN
+            
+            LOGIN
             </Link>
           </li>
           <li>
             <Link className="link" to="/signUp">
-             
-              SING UP
+            SING UP 
+           
             </Link>
           </li>
         </ul>

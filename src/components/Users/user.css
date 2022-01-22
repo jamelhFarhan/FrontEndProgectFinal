@@ -7,11 +7,12 @@
  
 width: 90%;
 height: 100px;
-
+margin-bottom: 40px;
 font-size: larger;
 font-family: sans-serif;
 text-align: center;
 font-style: italic;   
+margin-bottom: 320px;
 
 
 }
@@ -22,18 +23,19 @@ font-style: italic;
     display: flex;
     justify-content: space-between;
  
-    
+    margin-bottom: 90px;
 }
 
 .th{
     margin: 50px; 
-    background-color: rgba(30, 30, 63, 0.288);
+    background-color: rgba(0, 0, 0, 0.178) ; 
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
     height: 90px;
     border: grey  1px ;
+    margin-bottom: 90px;
 }
 
 /* #name-n-u{
@@ -49,8 +51,8 @@ font-style: italic;
   #delet-h-j{
     margin-left: 15px;
     margin-top: 30px;
-    width: 110px; 
-    height:40px;
+    width: 150px; 
+    height:60px;
     background-color:rgba(189, 31, 39, 0.781);
     border-radius: 10px;
     border:none;
@@ -60,13 +62,16 @@ font-style: italic;
   color: white;
   cursor: pointer;
   opacity: 0.9;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 
 } 
 #butn-user-edit{
     margin-left: 10px;
     margin-top: 0px;
-    width: 110px; 
-    height:40px;
+    width: 150px; 
+    height:60px;
    background-color: seagreen;
     border-radius: 10px;
     border:none;
@@ -75,16 +80,22 @@ font-style: italic;
   color: white;
   cursor: pointer;
   opacity: 0.9;
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
   
    
 }
 #butn-amount{
-width: 140px; 
-height: 40px;
+width: 150px; 
+height: 60px;
 text-align: center;
 border-radius: 10px;
 margin-left: 5px;
 background-color: rgba(59, 56, 56, 0.068) ;
+/* box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+/* border-top-left-radius: 50px;
+border-bottom-right-radius: 50px ; */ 
 
 }
 #name-user{
@@ -121,39 +132,39 @@ background-color: rgba(59, 56, 56, 0.068) ;
 
 @media only screen and (max-width: 768px){
 .main-div-users{
-    width: 650px;
-    margin-left: 10px;  
+    width: 380px;
+    margin-left: -155px;  
   
 } 
 .table{
-   width: 230px; 
-   margin-left: -20px;
+   width: 200px; 
+   margin-left: 130px;
   
 } .th{
 
-font-size: 20px;
+font-size: 10px;
 }
 #name-user{
- font-size: 15px;
+ font-size: 10px;
 } 
 #price-user{
-  font-size: 15px; 
+  font-size: 10px; 
 }
 #email-user{
-  font-size: 15px;  
+  font-size: 10px;  
 }
 #phone-user{
-  font-size: 15px;  
+  font-size: 10px;  
 }
 #delet-h-j{
-  width: 60px;
-  font-size: 15px;
+  width: 40px;
+  font-size: 9px;
 }
 #butn-user-edit{
-  width: 60px; 
-  font-size: 15px;
+  width: 40px; 
+  font-size: 9px;
 }
 #butn-amount{
- width: 100px; 
+ width: 80px; 
 }
 }

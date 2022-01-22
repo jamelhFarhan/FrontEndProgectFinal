@@ -12,6 +12,10 @@
 
 @media only screen and (max-width: 768px){
  .chart{
-     width: 350px;
+    width: 219px;
+    margin-left: 28px;
+    height: 289px;
+    margin-top: 66px;
+
  }   
 }

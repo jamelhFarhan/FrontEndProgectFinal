@@ -56,9 +56,11 @@
 @media only screen and (max-width: 768px){
 .topbar{
     width: 90px;
+    
 } 
 .topbarWrapper{
-    width:470px ;
+    width: 412px;
+    margin-left: -7px;
 }   
 }
   

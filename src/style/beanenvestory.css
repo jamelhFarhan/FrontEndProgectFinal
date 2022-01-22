@@ -31,7 +31,7 @@ font: 1em sans-serif;
     margin-left:700px ;
     margin-top: 10px;
     width: 160px; 
-    height:55px;
+    height:60px;
     background-color: rgb(177, 177, 219);  
     border-radius: 10px;
     border:none;
@@ -40,7 +40,9 @@ font: 1em sans-serif;
   color: white;
   cursor: pointer;
   opacity: 0.9;
-  box-shadow: 3px 3px 3px  rgb(44, 55, 73 ,88);
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px ;
 }
 #For-for{
     margin-left: 55px;
@@ -109,6 +111,7 @@ font-family: sans-serif;
 #all-item{
   box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
   border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 
 .pb{
@@ -131,6 +134,8 @@ font-family: sans-serif;
   cursor: pointer;
   opacity: 0.9;
   transition: width 2s, height 2s, transform 2s;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #dash-b0td:hover{
 
@@ -150,7 +155,8 @@ transform: rotate(180deg);
 /* ??????????????? */
 #sector{
   width: 100%;
-
+/* display: grid;
+grid-template-columns: 1fr 1fr  ;  */
 }
 
 #nqta{
@@ -165,9 +171,12 @@ transform: rotate(180deg);
   transition: width 4s;
   margin-bottom: 40px;
   margin-top: 15px;
-  margin-left: 60px;
+  margin-left: 620px;
   border-radius: 9px;
   cursor: cell; 
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #Design{
   color: white;
@@ -196,10 +205,13 @@ line-height: 25px;
   text-align: center;
   color: white;
   margin-bottom: 40px; 
-  margin-left: 60px;
+  margin-left: 620px;
   border-radius: 9px; 
   line-height: 25px; 
   cursor: cell; 
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #mobil{
 
@@ -219,9 +231,12 @@ line-height: 25px;
   opacity: 0.9;
   transition: width 4s;
   margin-bottom: 40px; 
-  margin-left: 60px;
+  margin-left: 620px;
   border-radius: 9px;
   cursor: cell; 
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #Sports-div{
   color: white;
@@ -246,11 +261,14 @@ line-height: 25px;
   opacity: 0.9;
   transition: width 4s;
   margin-bottom: 40px;
-  margin-left: 60px;
+  margin-left: 620px;
   border-radius: 6px; 
   margin-bottom: 80px;
   line-height: 25px; 
   cursor: cell; 
+  box-shadow: 5px 5px 5px  rgb(44, 55, 73 ,88);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px ;
 }
 #enter-tt{
   color: white;
@@ -268,9 +286,14 @@ line-height: 25px;
   width: 40%;
 }
 
+#sssaaadd{
+  margin-left: 600px;
+  margin-bottom: 60px;
+  color: rgb(177, 177, 219);  
 
+}
 /* ===============++++++++++++++========== */
-#img-img-o{
+/* #img-img-o{
   margin-left: 850px;
   margin-top: -900px;
  
@@ -286,7 +309,7 @@ line-height: 25px;
 }
 #img-mob{
   box-shadow: 5px 5px 5px rgb(44, 55, 73 ,88);
-}
+} */
 
 
 
@@ -327,6 +350,7 @@ margin-left: 115px;
 #sector{
 width: 380px;
 margin-top: 200px;
+margin-left: 29px;
 }
 
 #img-mob{
@@ -334,11 +358,21 @@ margin-top: 200px;
   width: 340px;
   margin-top: 864px;
 }
- 
-  
-
-
-
+#imation-final{
+  margin-left: 40px;
+}
+#gooood{
+  margin-left: 40px; 
+}  
+#Sports{
+  margin-left: 40px;  
+}
+#Entertainment{
+  margin-left: 40px; 
+}
+#sssaaadd{
+  margin-left: 40px; 
+}
 }
 
 

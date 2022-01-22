@@ -217,7 +217,7 @@ export default function Region({ token }) {
       );
       
       console.log(result.data);
-       setFavList(result.data)
+       setFavList(result.data,"to add personal")
   
     } catch (error) {
       console.log(error.response.data);
@@ -327,8 +327,9 @@ if (selected && types.includes(selected.type)){
               <br/>
               <br/>
              
-               <button id="fivert" onClick={() => {  Favorite(element._id); }} >❤</button> 
-                         
+               <button id="fivert" onClick={() => {  Favorite(element._id); }} >Add to favourites
+               </button> 
+                       
               <div>
             
               
@@ -387,13 +388,13 @@ if (selected && types.includes(selected.type)){
         <input className="input" onChange={(e) => { FuncImg(e); }}  placeholder="img" value={img}/><br/>
         <div>
         <label>
-        <input type="file" onChange={handleChange} />
+        <input id="rrredd" type="file" onChange={handleChange} />
        
       </label>
       <div className="output">
         { error && <div className="error">{ error }</div>}
         { file && <div >{ file.name }</div>}
-        { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg} /> }
+        { file && <ProgressBar file={file} setFile={setFile}  setImg={setImg}/> }
       </div>
         </div>
         <button id="add" onClick={() => { addRegion(); }} > add</button>

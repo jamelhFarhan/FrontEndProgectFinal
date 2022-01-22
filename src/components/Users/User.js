@@ -10,7 +10,7 @@ export default function User({ token }) {
     try {
       console.log(token);
       const dashbordadmin2 = await axios.get(
-        ~`${process.env.REACT_APP_BACKEND_URL}/getInvestor`,
+        `${process.env.REACT_APP_BACKEND_URL}/getInvestor`,
         {
           headers: { authorization: "Bearer " + token },
         }
